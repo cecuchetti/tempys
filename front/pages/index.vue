@@ -1,25 +1,18 @@
-<template>
-    <div class="flex flex-col gap-5 py-5 items-center w-full h-full">
-        <component :is="renderComponent" />
-    </div>
-</template>
-
 <script setup lang="ts">
-import FileUploadView from '@/components/Home/File/FileUploadIndexView.vue'
-import TextUploadView from '@/components/Home/Text/TextUploadIndexView.vue'
-import { isString } from 'lodash-es'
-const route = useRoute()
-const router = useRouter()
-const type = computed(() => route?.query?.type)
-watchEffect(() => {
-    if (!isString(type.value) || type.value?.length === 0) {
-        router.push({ query: { type: 'file' }, replace: true })
-    }
+// Redirect root to upload page with dashboard layout
+definePageMeta({
+    layout: 'dashboard',
 })
 
-const renderList = [
-    { key: 'file', component: FileUploadView },
-    { key: 'text', component: TextUploadView },
-]
-const renderComponent = computed(() => renderList.find((item) => item.key === type.value)?.component)
+const router = useRouter()
+onMounted(() => {
+    router.replace('/upload')
+})
 </script>
+
+<template>
+    <div class="w-full h-full flex items-center justify-center">
+        <!-- Loading state while redirecting -->
+        <div class="text-on-surface-variant">Redirecting...</div>
+    </div>
+</template>
