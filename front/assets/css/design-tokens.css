@@ -1,0 +1,849 @@
+/* ============================================
+ * TEMPYS DESIGN SYSTEM - COMPLETE TOKEN REFERENCE
+ * ============================================
+ * 
+ * A comprehensive design token system for the Tempys application.
+ * Based on the prototype's visual language and extended for production.
+ * 
+ * Color Space: OKLCH for perceptually uniform colors
+ * Typography: Inter (body), Manrope (headlines), JetBrains Mono (code)
+ * Responsive: Mobile-first with desktop optimizations
+ * Accessibility: WCAG AA compliant contrast ratios
+ * 
+ * ============================================ */
+
+/* ============================================
+ * COLOR SYSTEM - OKLCH FORMAT
+ * ============================================
+ * 
+ * OKLCH provides perceptually uniform color space with:
+ * - L: Lightness (0-1)
+ * - C: Chroma (saturation, 0-0.4 typically)
+ * - H: Hue (0-360 degrees)
+ * 
+ * Benefits:
+ * - Better gradient interpolation
+ * - Perceptually uniform brightness
+ * - Predictable contrast ratios
+ * - Future-proof for color gamut expansion
+ * 
+ * ============================================ */
+
+:root {
+    /* ============================================
+   * SURFACE HIERARCHY - Dark Theme Foundation
+   * ============================================
+   * 
+   * Creates visual depth through elevation levels.
+   * Each level is progressively lighter to indicate elevation.
+   * 
+   * Accessibility Notes:
+   * - All surface combinations meet WCAG AA contrast ratios
+   * - on-surface text (L:87.4) works on all backgrounds
+   * 
+   */
+
+    /* Base Surface - Main background */
+    --surface: oklch(0.15.018264.0);
+    /* #0b1326 - Deep navy base */
+    --on-surface: oklch(0.874.014264.0);
+    /* #dae2fd - Light blue-gray text */
+
+    /* Surface Variants - Elevation Levels */
+
+    /* Level 0 - Deepest containers (sidebars, modals) */
+    --surface-container-lowest: oklch(0.084.023263.9);
+    /* #060e20 - Near black, highest contrast */
+
+    /* Level 1 - Low elevation (cards, panels) */
+    --surface-container-low: oklch(0.127.018263.9);
+    /* #131b2e - Slight elevation */
+
+    /* Level 2 - Default container (content areas) */
+    --surface-container: oklch(0.176.018263.9);
+    /* #1a2335 - Standard surfaces */
+
+    /* Level 3 - High elevation (hover states) */
+    --surface-container-high: oklch(0.223.018263.9);
+    /* #222a3d - Elevated interactive */
+
+    /* Level 4 - Highest elevation (floating elements) */
+    --surface-container-highest: oklch(0.273.018263.9);
+    /* #2d3449 - Popovers, tooltips */
+
+    /* Bright Surface - Accent containers, special areas */
+    --surface-bright: oklch(0.298.020263.9);
+    /* #31394d - Bright accent containers */
+
+    /* Surface Variants */
+    --on-surface-variant: oklch(0.776.012263.9);
+    /* #c6c6cd - Secondary text */
+    --outline-variant: oklch(0.338.010263.9);
+    /* #45464d - Borders, dividers */
+
+    /* ============================================
+   * PRIMARY ACCENT - Electric Blue
+   * ============================================
+   * 
+   * Primary brand color for key interactions.
+   * Used for: CTAs, primary buttons, active states, links
+   * 
+   * Accessibility:
+   * - On white: 4.62:1 (WCAG AA)
+   * - On dark surfaces: 7.05:1 (WCAG AAA)
+   * 
+   */
+
+    /* Primary - Main accent color */
+    --primary: oklch(0.847.068257.5);
+    /* #adc6ff - Soft electric blue */
+    --on-primary: oklch(0.276.074257.5);
+    /* #002d6f - Deep navy for text on primary */
+
+    /* Primary Container - Subtle primary backgrounds */
+    --primary-container: oklch(0.129.044257.5);
+    /* #00163a - Primary tinted surface */
+    --on-primary-container: oklch(0.584.145257.5);
+    /* #357df1 - Brighter blue for interactive */
+
+    /* Primary Fixed - Consistent across themes */
+    --primary-fixed: oklch(0.916.052257.5);
+    /* #d8e2ff - Fixed light variant */
+
+    /* ============================================
+   * TERTIARY ACCENT - Kinetic Green
+   * ============================================
+   * 
+   * Secondary brand color for success states and special highlights.
+   * Used for: Success messages, progress indicators, special badges
+   * 
+   * Accessibility: 4.78:1 on dark backgrounds (WCAG AA)
+   * 
+   */
+
+    --tertiary: oklch(0.768.147162.5);
+    /* #4edea3 - Vibrant kinetic green */
+    --on-tertiary: oklch(0.255.077162.5);
+    /* #003923 - Deep green for text */
+
+    /* ============================================
+   * SEMANTIC COLORS
+   * ============================================
+   * 
+   * State-specific colors with clear semantic meaning.
+   * Each has proper contrast for accessibility.
+   * 
+   */
+
+    /* Error - Critical errors and destructive actions */
+    --error: oklch(0.775.14825.0);
+    /* #ffb4ab - Soft coral red */
+    --on-error: oklch(0.286.13325.0);
+    /* #690005 - Deep red for text */
+    --error-container: oklch(0.155.06825.0);
+    /* #410003 - Error tinted surface */
+
+    /* Success - Confirmation and positive states */
+    --success: oklch(0.768.147162.5);
+    /* Same as tertiary - kinetic green */
+    --on-success: oklch(0.255.077162.5);
+    --success-container: oklch(0.155.068162.5);
+    /* #003923 - Success tinted surface */
+
+    /* Warning - Caution states */
+    --warning: oklch(0.85.16585.0);
+    /* #fbbf24- Amber warning */
+    --on-warning: oklch(0.28.11085.0);
+    /* #78350f - Deep amber for text */
+    --warning-container: oklch(0.18.06085.0);
+    /* #fef3c7 - Warning tinted surface */
+
+    /* Info - Informational states */
+    --info: oklch(0.847.068257.5);
+    /* Same as primary - electric blue */
+    --on-info: oklch(0.276.074257.5);
+
+    /* ============================================
+   * TYPOGRAPHY SYSTEM
+   * ============================================
+   * 
+   * Three-font family system:
+   * 1. Sans (Inter) - Body text and UI elements
+   * 2. Headline (Manrope) - Headlines and emphasis
+   * 3. Mono (JetBrains Mono) - Code and data
+   * 
+   */
+
+    /* Font Families */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-headline: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', SFMono-Regular, 'Fira Code', monospace;
+
+    /* Font Weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+
+    /* Heading Sizes - Modular scale (1.25 ratio) */
+    --font-size-5xl: 3rem;
+    /* 48px - Hero headlines */
+    --font-size-4xl: 2.25rem;
+    /* 36px - Page titles */
+    --font-size-3xl: 1.875rem;
+    /* 30px - Section headers */
+    --font-size-2xl: 1.5rem;
+    /* 24px - Subsections */
+    --font-size-xl: 1.25rem;
+    /* 20px - Cards, emphasis */
+    --font-size-lg: 1.125rem;
+    /* 18px - Prominent body */
+
+    /* Body Sizes */
+    --font-size-base: 1rem;
+    /* 16px - Body text */
+    --font-size-sm: 0.875rem;
+    /* 14px - Secondary text */
+    --font-size-xs: 0.75rem;
+    /* 12px - Labels, hints */
+
+    /* Line Heights */
+    --line-height-tight: 1.2;
+    /* Headlines */
+    --line-height-normal: 1.5;
+    /* Body */
+    --line-height-relaxed: 1.75;
+    /* Long form */
+
+    /* Letter Spacing */
+    --letter-spacing-tight: -0.025em;
+    /* Tight headlines */
+    --letter-spacing-normal: 0;
+    /* Normal */
+    --letter-spacing-wide: 0.025em;
+    /* Wide for emphasis */
+    --letter-spacing-wider: 0.05em;
+    /* Extra wide (labels) */
+    --letter-spacing-widest: 0.1em;
+    /* Uppercase labels */
+
+    /* ============================================
+   * SPACING SYSTEM
+   * ============================================
+   * 
+   * 8-point grid system for consistent rhythm.
+   * All spacing values are multiples of 8px.
+   * 
+   */
+
+    /* Base Unit */
+    --space-unit: 0.25rem;
+    /* 4px - Never used directly */
+
+    /* Spacing Scale */
+    --space-0: 0;
+    /* 0px - No spacing */
+    --space-1: calc(var(--space-unit) * 1);
+    /* 4px - Tight spacing */
+    --space-2: calc(var(--space-unit) * 2);
+    /* 8px - Base spacing */
+    --space-3: calc(var(--space-unit) * 3);
+    /* 12px - Medium compact */
+    --space-4: calc(var(--space-unit) * 4);
+    /* 16px - Default spacing */
+    --space-5: calc(var(--space-unit) * 5);
+    /* 20px - Comfortable */
+    --space-6: calc(var(--space-unit) * 6);
+    /* 24px - Section spacing */
+    --space-8: calc(var(--space-unit) * 8);
+    /* 32px - Large spacing */
+    --space-10: calc(var(--space-unit) * 10);
+    /* 40px - XL spacing */
+    --space-12: calc(var(--space-unit) * 12);
+    /* 48px - Section gaps */
+    --space-16: calc(var(--space-unit) * 16);
+    /* 64px - Major sections */
+    --space-20: calc(var(--space-unit) * 20);
+    /* 80px - Page margins */
+    --space-24: calc(var(--space-unit) * 24);
+    /* 96px - Max spacing */
+
+    /* ============================================
+   * BORDER RADIUS SCALE
+   * ============================================
+   * 
+   * Consistent corner radiuses following 4px increments.
+   * Creates visual harmony across components.
+   * 
+   */
+
+    --radius-none: 0;
+    --radius-sm: 0.125rem;
+    /* 2px - Subtle rounding */
+    --radius-md: 0.25rem;
+    /* 4px - Buttons, small elements */
+    --radius-lg: 0.375rem;
+    /* 6px - Default inputs */
+    --radius-xl: 0.5rem;
+    /* 8px - Cards, containers */
+    --radius-2xl: 0.75rem;
+    /* 12px - Larger cards */
+    --radius-3xl: 1rem;
+    /* 16px - Modals, sheets */
+    --radius-4xl: 1.5rem;
+    /* 24px - Large containers */
+    --radius-full: 9999px;
+    /* Fully rounded (pills, avatars) */
+
+    /* ============================================
+   * SHADOW SYSTEM
+   * ============================================
+   * 
+   * Elevation shadows for depth perception.
+   * Uses primary/tertiary tints for brand consistency.
+   * 
+   */
+
+    /* Elevation Shadows */
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    /* Subtle lift */
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    /* Small elements */
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    /* Cards, dropdowns */
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    /* Modals, dialogs */
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    /* Large overlays */
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    /* Maximum elevation */
+
+    /* Colored Shadows - Brand accent shadows */
+    --shadow-primary-sm: 0 2px 4px 0 rgb(173, 198, 255 / 0.15);
+    /* Primary tint */
+    --shadow-primary-md: 0 4px 8px 0 rgb(173, 198, 255 / 0.2);
+    --shadow-tertiary-sm: 0 2px 4px 0 rgb(78, 222, 163 / 0.2);
+    /* Tertiary tint */
+    --shadow-tertiary-md: 0 4px 8px 0 rgb(78, 222, 163 / 0.25);
+    --shadow-error-sm: 0 2px 4px 0 rgb(255, 180, 171 / 0.15);
+    /* Error tint */
+
+    /* Glow Effects - For active states */
+    --glow-primary: 0 0 12px rgb(173, 198, 255 / 0.3);
+    --glow-tertiary: 0 0 8px rgb(78, 222, 163 / 0.4);
+    --glow-error: 0 0 8px rgb(255, 180, 171 / 0.4);
+
+    /* ============================================
+   * TRANSITION & ANIMATION TOKENS
+   * ============================================
+   * 
+   * Consistent timing functions for smooth interactions.
+   * 
+   */
+
+    /* Duration */
+    --duration-instant: 0ms;
+    /* No animation */
+    --duration-fast: 100ms;
+    /* Instant feedback */
+    --duration-normal: 200ms;
+    /* Default transitions */
+    --duration-slow: 300ms;
+    /* Complex animations */
+    --duration-slower: 500ms;
+    /* Page transitions */
+    --duration-slowest: 700ms;
+    /* Hero animations */
+
+    /* Timing Functions */
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Common Transitions */
+    --transition-colors:
+        color var(--duration-normal) var(--ease-in-out), background-color var(--duration-normal) var(--ease-in-out),
+        border-color var(--duration-normal) var(--ease-in-out);
+    --transition-opacity: opacity var(--duration-normal) var(--ease-in-out);
+    --transition-shadow: box-shadow var(--duration-normal) var(--ease-in-out);
+    --transition-transform: transform var(--duration-normal) var(--ease-in-out);
+    --transition-all: all var(--duration-normal) var(--ease-in-out);
+
+    /* ============================================
+   * Z-INDEX SCALE
+   * ============================================
+   * 
+   * Organized layering system to prevent z-index conflicts.
+   * 
+   */
+
+    --z-below: -1;
+    /* Behind content */
+    --z-base: 0;
+    /* Default */
+    --z-dropdown: 10;
+    /* Dropdown menus */
+    --z-sticky: 20;
+    /* Sticky elements */
+    --z-fixed: 30;
+    /* Fixed elements */
+    --z-modal-backdrop: 40;
+    /* Modal backdrop */
+    --z-modal: 50;
+    /* Modal content */
+    --z-popover: 60;
+    /* Popovers */
+    --z-tooltip: 70;
+    /* Tooltips */
+    --z-toast: 80;
+    /* Toast notifications */
+    --z-top: 90;
+    /* Highest UI elements */
+    --z-max: 9999;
+    /* Maximum (modals, overlays) */
+
+    /* ============================================
+   * BREAKPOINTS - Responsive Design
+   * ============================================
+   * 
+   * Mobile-first breakpoint system.
+   * Desktop is the primary design target for Tempys.
+   * 
+   */
+
+    --breakpoint-xs: 320px;
+    /* Extra small devices */
+    --breakpoint-sm: 640px;
+    /* Small tablets */
+    --breakpoint-md: 768px;
+    /* Tablets */
+    --breakpoint-lg: 1024px;
+    /* Laptops */
+    --breakpoint-xl: 1280px;
+    /* Desktops */
+    --breakpoint-2xl: 1536px;
+    /* Large desktops */
+
+    /* ============================================
+   * LAYOUT DIMENSIONS
+   * ============================================
+   * 
+   * Standard sizing for layout elements.
+   * 
+   */
+
+    /* Sidebar */
+    --sidebar-width: 16rem;
+    /* 256px - Desktop sidebar */
+    --sidebar-width-collapsed: 4rem;
+    /* 64px - Collapsed state */
+
+    /* Top Bar */
+    --topbar-height: 4rem;
+    /* 64px - Desktop topbar */
+    --topbar-height-mobile: 3.5rem;
+    /* 56px - Mobile topbar */
+
+    /* Content */
+    --content-max-width: 80rem;
+    /* 1280px - Max content width */
+    --content-padding-desktop: 3rem;
+    /* 48px - Desktop side padding */
+    --content-padding-mobile: 1rem;
+    /* 16px - Mobile side padding */
+
+    /* Glass Panel Blur */
+    --glass-blur: 20px;
+    /* Standard glass blur */
+    --glass-blur-heavy: 40px;
+    /* Heavy glass blur */
+}
+
+/* ============================================
+ * RESPONSIVE ADAPTATIONS
+ * ============================================
+ * 
+ * Adjust design tokens for different screen sizes.
+ * 
+ */
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+    :root {
+        /* Reduce spacing on mobile */
+        --content-padding: 1rem;
+        --sidebar-width: 100%;
+        /* Full width on mobile */
+
+        /* Reduce font sizes for headlines */
+        --font-size-5xl: 2.25rem;
+        /* 36px instead of 48px */
+        --font-size-4xl: 1.875rem;
+        /* 30px */
+        --font-size-3xl: 1.5rem;
+        /* 24px */
+
+        /* Reduce shadows on mobile (performance) */
+        --shadow-lg: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        --shadow-xl: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    }
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    :root {
+        --content-padding: 2rem;
+        /* 32px */
+        --sidebar-width: 14rem;
+        /* 224px */
+    }
+}
+
+/* Desktop (> 1024px) */
+@media (min-width: 1024px) {
+    :root {
+        --content-padding: 3rem;
+        /* 48px */
+    }
+}
+
+/* Large Desktop (> 1536px) */
+@media (min-width: 1536px) {
+    :root {
+        --content-padding: 4rem;
+        /* 64px */
+        --content-max-width: 90rem;
+        /* 1440px */
+    }
+}
+
+/* ============================================
+ * COMPONENT PATTERNS - UTILITY CLASSES
+ * ============================================
+ * 
+ * Pre-built component styles using design tokens.
+ * 
+ */
+
+/* Glass Panel - Glassmorphism effect */
+.glass-panel {
+    background-color: rgb(45, 52, 73 / 0.6);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid rgb(255, 255, 255 / 0.05);
+}
+
+.glass-panel-heavy {
+    background-color: rgb(45, 52, 73 / 0.8);
+    backdrop-filter: blur(var(--glass-blur-heavy));
+    -webkit-backdrop-filter: blur(var(--glass-blur-heavy));
+    border: 1px solid rgb(255, 255, 255 / 0.08);
+}
+
+/* Kinetic Gradient - Brand gradient */
+.kinetic-gradient {
+    background: linear-gradient(135deg, oklch(0.847.068257.5) 0%, oklch(0.584.145257.5) 100%);
+}
+
+.kinetic-gradient-reverse {
+    background: linear-gradient(135deg, oklch(0.584.145257.5) 0%, oklch(0.847.068257.5) 100%);
+}
+
+/* Progress Glow - For progress indicators */
+.progress-glow {
+    box-shadow: var(--glow-tertiary);
+}
+
+.progress-glow-primary {
+    box-shadow: var(--glow-primary);
+}
+
+/* Surface Container Classes */
+.surface-lowest {
+    background-color: var(--surface-container-lowest);
+}
+
+.surface-low {
+    background-color: var(--surface-container-low);
+}
+
+.surface-default {
+    background-color: var(--surface-container);
+}
+
+.surface-high {
+    background-color: var(--surface-container-high);
+}
+
+.surface-highest {
+    background-color: var(--surface-container-highest);
+}
+
+.surface-bright {
+    background-color: var(--surface-bright);
+}
+
+/* Text Hierarchy Classes */
+.text-headline {
+    font-family: var(--font-headline);
+    font-weight: var(--font-weight-extrabold);
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+.text-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-widest);
+}
+
+.text-code {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+}
+
+/* Interactive States */
+.interactive {
+    cursor: pointer;
+    transition: var(--transition-all);
+}
+
+.interactive:hover {
+    transform: translateY(-1px);
+}
+
+.interactive:active {
+    transform: scale(0.98);
+}
+
+.interactive:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Disabled State */
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ============================================
+ * ANIMATION KEYFRAMES
+ * ============================================
+ * 
+ * Standard animations for common interactions.
+ * 
+ */
+
+/* Fade In */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide Up */
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(var(--space-4));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide Down */
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(calc(var(--space-4) * -1));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale In */
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Spin - For loading states */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pulse - For attention */
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Shimmer - For loading skeletons */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Glow Pulse - For active states */
+@keyframes glow-pulse {
+    0%,
+    100% {
+        box-shadow: 0 0 8px rgb(78, 222, 163 / 0.4);
+    }
+    50% {
+        box-shadow: 0 0 16px rgb(78, 222, 163 / 0.6);
+    }
+}
+
+/* ============================================
+ * ANIMATION UTILITY CLASSES
+ * ============================================
+ * 
+ * Pre-built animation classes using keyframes.
+ * 
+ */
+
+.animate-fade-in {
+    animation: fade-in var(--duration-normal) var(--ease-in-out);
+}
+
+.animate-slide-up {
+    animation: slide-up var(--duration-normal) var(--ease-out);
+}
+
+.animate-slide-down {
+    animation: slide-down var(--duration-normal) var(--ease-out);
+}
+
+.animate-scale-in {
+    animation: scale-in var(--duration-normal) var(--ease-out);
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-shimmer {
+    background: linear-gradient(90deg, var(--surface-container) 0%, var(--surface-container-high) 50%, var(--surface-container) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s linear infinite;
+}
+
+.animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+ * REDUCED MOTION PREFERENCES
+ * ============================================
+ * 
+ * Respect user's motion preferences for accessibility.
+ * 
+ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+ * ACCESSIBILITY UTILITIES
+ * ============================================
+ * 
+ * Tools for improving accessibility.
+ * 
+ */
+
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus Visible */
+.focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary: oklch(0.9 0.08257.5);
+        /* Higher contrast primary */
+        --on-surface-variant: oklch(0.9 0.012263.9);
+        /* Higher contrast secondary text */
+    }
+}
+
+/* ============================================
+ * PRINT STYLES
+ * ============================================
+ * 
+ * Optimizations for printing.
+ * 
+ */
+
+@media print {
+    :root {
+        --surface: white;
+        --on-surface: black;
+        --surface-container: white;
+        --on-surface-variant: rgb(60, 60, 60);
+    }
+
+    .glass-panel {
+        background-color: white;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}

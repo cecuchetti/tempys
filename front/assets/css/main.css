@@ -1,168 +1,348 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+/* ============================================
+ * TEMPYS DESIGN SYSTEM - MAIN ENTRY POINT
+ * ============================================
+ *
+ * Import order is critical for proper CSS cascade:
+ * 1. Design tokens (variables)
+ * 2. Component styles
+ * 3. Tailwind CSS
+ * 4. Animations
+ * 5. Utilities
+ *
+ * ============================================ */
+
+/* Import Google Fonts - External imports must come first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Import design tokens first for CSS variable availability */
+@import './design-tokens.css';
+@import './components.css';
+
+/* Import Tailwind CSS */
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/* Tailwind plugins */
 @plugin "@tailwindcss/typography";
 
+/* Custom variants */
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-  @keyframes accordion-down {
-  from {
-    height: 0;
+    /* ============================================
+     * TEMPYS DESIGN TOKENS
+     * ============================================
+     * 
+     * These tokens reference CSS variables defined in design-tokens.css
+     * Using @theme inline allows Tailwind to generate utility classes
+     * 
+     * Usage:
+     * - bg-surface → background-color: var(--surface)
+     * - text-on-surface → color: var(--on-surface)
+     * - font-headline → font-family: var(--font-headline)
+     * 
+     * ============================================ */
+
+    /* Typography System */
+    --font-sans: var(--font-sans);
+    --font-headline: var(--font-headline);
+    --font-mono: var(--font-mono);
+
+    /* Font Weights */
+    --font-weight-regular: var(--font-weight-regular);
+    --font-weight-medium: var(--font-weight-medium);
+    --font-weight-semibold: var(--font-weight-semibold);
+    --font-weight-bold: var(--font-weight-bold);
+    --font-weight-extrabold: var(--font-weight-extrabold);
+
+    /* Font Sizes */
+    --font-size-5xl: var(--font-size-5xl);
+    --font-size-4xl: var(--font-size-4xl);
+    --font-size-3xl: var(--font-size-3xl);
+    --font-size-2xl: var(--font-size-2xl);
+    --font-size-xl: var(--font-size-xl);
+    --font-size-lg: var(--font-size-lg);
+    --font-size-base: var(--font-size-base);
+    --font-size-sm: var(--font-size-sm);
+    --font-size-xs: var(--font-size-xs);
+
+    /* Tempys Surface Hierarchy - Dark Theme */
+    --color-surface: var(--surface);
+    --color-on-surface: var(--on-surface);
+    --color-surface-container-lowest: var(--surface-container-lowest);
+    --color-surface-container-low: var(--surface-container-low);
+    --color-surface-container: var(--surface-container);
+    --color-surface-container-high: var(--surface-container-high);
+    --color-surface-container-highest: var(--surface-container-highest);
+    --color-surface-bright: var(--surface-bright);
+
+    /* Primary Accent - Electric Blue */
+    --color-primary: var(--primary);
+    --color-on-primary: var(--on-primary);
+    --color-primary-container: var(--primary-container);
+    --color-on-primary-container: var(--on-primary-container);
+    --color-primary-fixed: var(--primary-fixed);
+
+    /* Tertiary Accent - Kinetic Green */
+    --color-tertiary: var(--tertiary);
+    --color-on-tertiary: var(--on-tertiary);
+
+    /* Surface Variants */
+    --color-on-surface-variant: var(--on-surface-variant);
+    --color-outline-variant: var(--outline-variant);
+
+    /* Semantic Colors */
+    --color-error: var(--error);
+    --color-on-error: var(--on-error);
+    --color-success: var(--success);
+    --color-on-success: var(--on-success);
+    --color-warning: var(--warning);
+    --color-on-warning: var(--on-warning);
+    --color-info: var(--info);
+    --color-on-info: var(--on-info);
+
+    /* Preserve shadcn-vue theme variables for compatibility */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* Animations */
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--reka-accordion-content-height);
+        }
     }
-  to {
-    height: var(--reka-accordion-content-height);
+
+    @keyframes accordion-up {
+        from {
+            height: var(--reka-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
     }
-  }
-  @keyframes accordion-up {
-  from {
-    height: var(--reka-accordion-content-height);
-    }
-  to {
-    height: 0;
-    }
-  }
 }
 
+/* Root variables - Light theme (not used in Tempys, but kept for shadcn compatibility) */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.4349 0.0673 257.47);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.129 0.042 264.695);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.129 0.042 264.695);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.129 0.042 264.695);
+    --primary: oklch(0.4349 0.0673 257.47);
+    --primary-foreground: oklch(0.984 0.003 247.858);
+    --secondary: oklch(0.968 0.007 247.896);
+    --secondary-foreground: oklch(0.208 0.042 265.755);
+    --muted: oklch(0.968 0.007 247.896);
+    --muted-foreground: oklch(0.554 0.046 257.417);
+    --accent: oklch(0.968 0.007 247.896);
+    --accent-foreground: oklch(0.208 0.042 265.755);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.577 0.245 27.325);
+    --border: oklch(0.929 0.013 255.508);
+    --input: oklch(0.929 0.013 255.508);
+    --ring: oklch(0.704 0.04 256.788);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.984 0.003 247.858);
+    --sidebar-foreground: oklch(0.129 0.042 264.695);
+    --sidebar-primary: oklch(0.208 0.042 265.755);
+    --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-accent: oklch(0.968 0.007 247.896);
+    --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+    --sidebar-border: oklch(0.929 0.013 255.508);
+    --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
+/* Dark theme - Tempys primary theme */
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.129 0.042 264.695);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.129 0.042 264.695);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.984 0.003 247.858);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.279 0.041 260.031);
-  --input: oklch(0.279 0.041 260.031);
-  --ring: oklch(0.446 0.043 257.281);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(0.279 0.041 260.031);
-  --sidebar-ring: oklch(0.446 0.043 257.281);
+    --background: oklch(0.129 0.042 264.695);
+    --foreground: oklch(0.984 0.003 247.858);
+    --card: oklch(0.129 0.042 264.695);
+    --card-foreground: oklch(0.984 0.003 247.858);
+    --popover: oklch(0.129 0.042 264.695);
+    --popover-foreground: oklch(0.984 0.003 247.858);
+    --primary: oklch(0.984 0.003 247.858);
+    --primary-foreground: oklch(0.208 0.042 265.755);
+    --secondary: oklch(0.279 0.041 260.031);
+    --secondary-foreground: oklch(0.984 0.003 247.858);
+    --muted: oklch(0.279 0.041 260.031);
+    --muted-foreground: oklch(0.704 0.04 256.788);
+    --accent: oklch(0.279 0.041 260.031);
+    --accent-foreground: oklch(0.984 0.003 247.858);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --border: oklch(0.279 0.041 260.031);
+    --input: oklch(0.279 0.041 260.031);
+    --ring: oklch(0.446 0.043 257.281);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.208 0.042 265.755);
+    --sidebar-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-accent: oklch(0.279 0.041 260.031);
+    --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-border: oklch(0.279 0.041 260.031);
+    --sidebar-ring: oklch(0.446 0.043 257.281);
 }
 
+/* Base layer styles */
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+    * {
+        @apply border-border outline-ring/50;
+    }
 
-  body {
-    @apply bg-background text-foreground;
-  }
+    body {
+        @apply bg-background text-foreground;
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 }
+
+/* ============================================
+ * TEMPYS CUSTOM UTILITY CLASSES
+ *============================================*/
+
+/* Glass Panel Effect - Modern glassmorphism */
+.glass-panel {
+    background: rgba(45, 52, 73, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Kinetic Gradient - Brand gradient */
+.kinetic-gradient {
+    background: linear-gradient(135deg, #adc6ff 0%, #357df1 100%);
+}
+
+/* Progress Glow - Visual feedback for progress bars */
+.progress-glow {
+    box-shadow: 0 0 8px rgba(78, 222, 163, 0.4);
+}
+
+/* Primary Glow - For primary accent elements */
+.primary-glow {
+    box-shadow: 0 0 12px rgba(173, 198, 255, 0.3);
+}
+
+/* Surface container variants */
+.surface-lowest {
+    background-color: var(--color-surface-container-lowest);
+}
+
+.surface-low {
+    background-color: var(--color-surface-container-low);
+}
+
+.surface-high {
+    background-color: var(--color-surface-container-high);
+}
+
+.surface-highest {
+    background-color: var(--color-surface-container-highest);
+}
+
+/*============================================* TipTap Editor Styles
+ *============================================*/
 
 .tiptap p.is-editor-empty:first-child::before {
-  color: #adb5bd;
-  content: attr(data-placeholder);
-  float: left;
-  height: 0;
-  pointer-events: none;
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
 }
 
-@layer base {
-  :root {
-    /* ... */
-    --vis-tooltip-background-color: none !important;
-    --vis-tooltip-border-color: none !important;
-    --vis-tooltip-text-color: none !important;
-    --vis-tooltip-shadow-color: none !important;
-    --vis-tooltip-backdrop-filter: none !important;
-    --vis-tooltip-padding: none !important;
+/*============================================* Vis/Chart Theme Variables
+ *============================================*/
 
-    --vis-primary-color: var(--primary);
-    /* change to any hsl value you want */
-    --vis-secondary-color: 160 81% 40%;
-    --vis-text-color: var(--muted-foreground);
-  }
+@layer base {
+    :root {
+        --vis-tooltip-background-color: none !important;
+        --vis-tooltip-border-color: none !important;
+        --vis-tooltip-text-color: none !important;
+        --vis-tooltip-shadow-color: none !important;
+        --vis-tooltip-backdrop-filter: none !important;
+        --vis-tooltip-padding: none !important;
+        --vis-primary-color: var(--primary);
+        --vis-secondary-color: 160 81% 40%;
+        --vis-text-color: var(--muted-foreground);
+    }
+}
+
+/*============================================* Accessibility Utilities
+ *============================================*/
+
+@layer utilities {
+    /* Focus ring for keyboard navigation - WCAG AA compliant */
+    .focus-ring {
+        @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+    }
+
+    /* Screen reader only - visually hidden but accessible */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    /* Skip link - initially hidden, visible on focus */
+    .skip-link {
+        @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-on-primary focus:rounded-lg focus:outline-none;
+    }
 }
