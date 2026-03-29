@@ -9,10 +9,23 @@ import (
 	"time"
 
 	"github.com/hibiken/asynq"
-	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v4"
 	gonanoid "github.com/matoous/go-nanoid/v2"
 	"github.com/spf13/cast"
 )
+
+// ShareListItem represents a share in the list response
+type ShareListItem struct {
+	ID          string `json:"id"`
+	Type        string `json:"type"`
+	Name        string `json:"name"`
+	CreatedAt   int64  `json:"created_at"`
+	ExpireAt    int64  `json:"expire_at"`
+	Views       int64  `json:"views"`
+	ViewsLeft   int64  `json:"views_left"`
+	HasPassword bool   `json:"has_password"`
+	Size        int64  `json:"size,omitempty"`
+}
 
 type CreateShareProps struct {
 	Type models.ShareType `json:"type"`
@@ -32,8 +45,9 @@ type ShareConfig struct {
 	HasPickupCode bool     `json:"has_pickup_code"`
 }
 
-func CreateShareInfo(c *echo.Context) error {
-	owner, _ := echo.ContextGet[string](c, "auth")
+func CreateShareInfo(c echo.Context) error {
+	authVal := c.Get("auth")
+	owner, _ := authVal.(string)
 
 	r := new(CreateShareProps)
 	if err := c.Bind(r); err != nil {
@@ -86,6 +100,14 @@ func CreateShareInfo(c *echo.Context) error {
 	})
 	if err != nil {
 		return utils.HTTPErrorHandler(c, err)
+	}
+
+	// Track user share relationship
+	if owner != "" {
+		if err := models.AddUserShare(owner, id, ExpireTime.Unix()); err != nil {
+			// Log error but don't fail the request
+			// This is a non-critical operation
+		}
 	}
 	var pickupCode string
 	if r.Config.HasPickupCode {
@@ -156,7 +178,7 @@ type GetShareProps struct {
 	ShareId string `param:"id"`
 }
 
-func GetShareInfo(c *echo.Context) error {
+func GetShareInfo(c echo.Context) error {
 	shareId := c.Param("id")
 	if shareId == "" {
 		return utils.HTTPErrorHandler(c, ErrInvalidRequest)
@@ -205,7 +227,7 @@ func GetShareInfo(c *echo.Context) error {
 	})
 }
 
-func GetShareByPickupCode(c *echo.Context) error {
+func GetShareByPickupCode(c echo.Context) error {
 	pickupCode := c.Param("code")
 	if pickupCode == "" {
 		return utils.HTTPErrorHandler(c, ErrInvalidRequest)
@@ -219,5 +241,56 @@ func GetShareByPickupCode(c *echo.Context) error {
 	}
 	return utils.HTTPSuccessHandler(c, map[string]any{
 		"share_id": shareId,
+	})
+}
+
+// GetUserShares returns all shares for the authenticated user
+func GetUserShares(c echo.Context) error {
+	// Get user ID from context (set by AuthMiddleware)
+	authVal := c.Get("auth")
+	owner, ok := authVal.(string)
+	if !ok || owner == "" {
+		return utils.HTTPErrorHandler(c, ErrUnauthorized)
+	}
+
+	// Get share IDs for this user
+	shareIds, err := models.GetUserShares(owner)
+	if err != nil {
+		return utils.HTTPErrorHandler(c, err)
+	}
+
+	// Build list of shares with their details
+	var shares []ShareListItem
+	for _, shareId := range shareIds {
+		shareInfo, err := models.GetRedisShareInfo(shareId)
+		if err != nil || shareInfo == nil {
+			// Skip invalid or expired shares
+			continue
+		}
+
+		item := ShareListItem{
+			ID:          shareId,
+			Type:        string(shareInfo.Type),
+			Name:        shareInfo.FileName,
+			CreatedAt:   shareInfo.CreatedAt,
+			ExpireAt:    shareInfo.ExpireAt,
+			Views:       shareInfo.ViewNum,
+			HasPassword: shareInfo.Password != "",
+		}
+
+		// For file shares, get file size
+		if shareInfo.Type == models.ShareTypeFile && shareInfo.Data != "" {
+			fileInfo, err := models.GetRedisFileInfo(shareInfo.Data)
+			if err == nil && fileInfo != nil {
+				item.Size = fileInfo.FileSize
+			}
+		}
+
+		shares = append(shares, item)
+	}
+
+	return utils.HTTPSuccessHandler(c, map[string]any{
+		"shares": shares,
+		"total":  len(shares),
 	})
 }

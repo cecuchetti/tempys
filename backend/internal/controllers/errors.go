@@ -27,4 +27,7 @@ var (
 	// 下载相关
 	ErrInvalidSharePassword      = errors.New("InvalidSharePassword")      // 分享密码错误
 	ErrInsufficientDownloadQuota = errors.New("InsufficientDownloadQuota") // 下载次数不足
+
+	// 用户相关
+	ErrUnauthorized = errors.New("Unauthorized") // 未授权访问
 )

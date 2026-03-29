@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v4"
 	"github.com/spf13/cast"
 )
 
@@ -17,7 +17,7 @@ type DownloadShareClaims struct {
 	jwt.RegisteredClaims
 }
 
-func DownloadShare(c *echo.Context) error {
+func DownloadShare(c echo.Context) error {
 	token := c.FormValue("token")
 	if token == "" {
 		return utils.HTTPErrorHandler(c, ErrInvalidRequest)
@@ -52,7 +52,7 @@ type VaildateShareProps struct {
 	Password string `json:"password"`
 }
 
-func VaildateShare(c *echo.Context) error {
+func VaildateShare(c echo.Context) error {
 	r := new(VaildateShareProps)
 	if err := c.Bind(r); err != nil {
 		return utils.HTTPErrorHandler(c, err)

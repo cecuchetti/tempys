@@ -3,7 +3,7 @@ package main
 import (
 	"backend/middleware"
 
-	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v4"
 )
 
 var middlewares = []func() echo.MiddlewareFunc{

@@ -3,14 +3,14 @@ package task
 import (
 	"encoding/json"
 
-	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v4"
 )
 
 type BaseImageRequest struct {
 	FileId string `json:"file_id"`
 }
 
-func HandleImageCompress(c *echo.Context) ([]byte, error) {
+func HandleImageCompress(c echo.Context) ([]byte, error) {
 	r := new(BaseImageRequest)
 	if err := c.Bind(r); err != nil {
 		return nil, err
@@ -33,7 +33,7 @@ type ImageConvertRequest struct {
 	TargetExt string `json:"target_ext"`
 }
 
-func HandleImageConvert(c *echo.Context) ([]byte, error) {
+func HandleImageConvert(c echo.Context) ([]byte, error) {
 	r := new(ImageConvertRequest)
 	if err := c.Bind(r); err != nil {
 		return nil, err

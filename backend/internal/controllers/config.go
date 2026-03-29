@@ -5,11 +5,11 @@ import (
 	u "pkg/utils"
 	"time"
 
-	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v4"
 	"github.com/spf13/cast"
 )
 
-func GetConfig(c *echo.Context) error {
+func GetConfig(c echo.Context) error {
 	return utils.HTTPSuccessHandler(c, map[string]any{
 		"site_title":  u.GetEnvMapString("site.title"),
 		"site_desc":   u.GetEnvMapString("site.desc"),

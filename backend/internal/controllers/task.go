@@ -7,15 +7,15 @@ import (
 	u "pkg/utils"
 
 	"github.com/hibiken/asynq"
-	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v4"
 )
 
-var handleTaskMap = map[string]func(c *echo.Context) ([]byte, error){
+var handleTaskMap = map[string]func(c echo.Context) ([]byte, error){
 	"image:compress": task.HandleImageCompress,
 	"image:convert":  task.HandleImageConvert,
 }
 
-func CreateTask(c *echo.Context) error {
+func CreateTask(c echo.Context) error {
 	taskType := c.Param("type")
 	if taskType == "" {
 		return utils.HTTPErrorHandler(c, ErrInvalidRequest)
@@ -40,7 +40,7 @@ func CreateTask(c *echo.Context) error {
 	})
 }
 
-func GetTask(c *echo.Context) error {
+func GetTask(c echo.Context) error {
 	taskId := c.Param("id")
 	if taskId == "" {
 		return utils.HTTPErrorHandler(c, ErrInvalidRequest)

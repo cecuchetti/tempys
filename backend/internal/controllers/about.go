@@ -6,11 +6,11 @@ import (
 	"pkg/models"
 	u "pkg/utils"
 
-	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v4"
 	"github.com/samber/lo"
 )
 
-func GetAbout(c *echo.Context) error {
+func GetAbout(c echo.Context) error {
 	maxStorageSize, err := u.GetFileSize(u.GetEnv("upload.maximum"))
 	if err != nil {
 		return utils.HTTPErrorHandler(c, err)

@@ -3,13 +3,13 @@ package main
 import (
 	"backend/internal/controllers"
 
-	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v4"
 )
 
 type Route struct {
 	Method  []string
 	Path    string
-	Handler func(c *echo.Context) error
+	Handler func(c echo.Context) error
 }
 
 var routes = []Route{
@@ -27,6 +27,8 @@ var routes = []Route{
 	{Method: []string{"GET"}, Path: "/stat", Handler: controllers.GetStat},
 	{Method: []string{"GET"}, Path: "/config", Handler: controllers.GetConfig},
 	{Method: []string{"GET"}, Path: "/about", Handler: controllers.GetAbout},
+
+	{Method: []string{"GET"}, Path: "/user/shares", Handler: controllers.GetUserShares},
 
 	{Method: []string{"POST"}, Path: "/task/:type", Handler: controllers.CreateTask},
 	{Method: []string{"GET"}, Path: "/task/:id", Handler: controllers.GetTask},

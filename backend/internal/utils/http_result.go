@@ -3,7 +3,7 @@ package utils
 import (
 	"net/http"
 
-	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v4"
 )
 
 type Option interface {
@@ -36,7 +36,7 @@ func (o WithData) applyTo(props *HTTPBaseResponse) {
 	props.data = o
 }
 
-func HTTPBaseHandler(c *echo.Context, options ...Option) error {
+func HTTPBaseHandler(c echo.Context, options ...Option) error {
 	props := HTTPBaseResponse{code: http.StatusOK, message: "success", data: map[string]any{}}
 	for _, option := range options {
 		option.applyTo(&props)
@@ -49,10 +49,10 @@ func HTTPBaseHandler(c *echo.Context, options ...Option) error {
 	})
 }
 
-func HTTPSuccessHandler(c *echo.Context, data map[string]any, options ...HTTPBaseResponseProps) error {
+func HTTPSuccessHandler(c echo.Context, data map[string]any, options ...HTTPBaseResponseProps) error {
 	return HTTPBaseHandler(c, WithData(data))
 }
 
-func HTTPErrorHandler(c *echo.Context, err error, options ...HTTPBaseResponseProps) error {
+func HTTPErrorHandler(c echo.Context, err error, options ...HTTPBaseResponseProps) error {
 	return HTTPBaseHandler(c, WithMessage(err.Error()), WithCode(http.StatusBadRequest))
 }

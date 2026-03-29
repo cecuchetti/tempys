@@ -6,7 +6,7 @@ import (
 	"pkg/models"
 	u "pkg/utils"
 
-	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v4"
 )
 
 const (
@@ -27,7 +27,7 @@ type QueueChartData struct {
 	Failed    int `json:"failed"`
 }
 
-func GetStat(c *echo.Context) error {
+func GetStat(c echo.Context) error {
 	statInfoMap, err := models.GetRedisStatAll()
 	if err != nil {
 		return utils.HTTPErrorHandler(c, err)
