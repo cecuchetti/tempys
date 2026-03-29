@@ -8,7 +8,7 @@ const appConfig = useMyAppConfig()
 <template>
     <div class="flex flex-row flex-wrap gap-4 items-center text-sm opacity-60">
         <div class="flex flex-row gap-1 opacity-100">
-            <NuxtLink href="https://github.com/keven1024/015" target="_blank" class="text-primary hover:underline">015</NuxtLink>
+            <NuxtLink href="https://github.com/cecuchetti/tempys" target="_blank" class="text-primary hover:underline">tempys</NuxtLink>
             {{ appConfig?.version ?? 'dev' }}
         </div>
 

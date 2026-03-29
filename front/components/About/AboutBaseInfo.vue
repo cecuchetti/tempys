@@ -53,7 +53,7 @@ const genUserAvatar = (email: string) => {
             <div class="text-xl">{{ renderI18n(appConfig?.site_title ?? {}, 'en', locale) }}</div>
             <div class="text-sm opacity-75 text-center px-5">
                 <I18nT keypath="page.about.powerBy" tag="span">
-                    <NuxtLink href="https://github.com/keven1024/015" target="_blank" class="text-primary hover:underline">015</NuxtLink>
+                    <NuxtLink href="https://github.com/cecuchetti/tempys" target="_blank" class="text-primary hover:underline">tempys</NuxtLink>
                 </I18nT>
             </div>
         </div>
