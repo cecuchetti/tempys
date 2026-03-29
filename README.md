@@ -1,14 +1,17 @@
 <div align="center"><a name="readme-top"></a>
 
-# 015
+# tempys
 
-015 (/ˈzɪərəʊ wʌn faɪv/, "zero-one-five") is a self-hosted temporary file sharing platform. Focused on providing one-time, temporary file and text upload, processing, and sharing services. The project name originates from [Ichigo](https://darling-in-the-franxx.fandom.com/wiki/Ichigo) from DARLING in the FRANXX.
+[![GitHub](https://img.shields.io/github/license/cecuchetti/tempys)](https://github.com/cecuchetti/tempys)
+[![GitHub stars](https://img.shields.io/github/stars/cecuchetti/tempys)](https://github.com/cecuchetti/tempys)
 
-A modern file sharing website built with Vue 3 + Nuxt 3 + Go, supporting file upload, text sharing, image compression, concurrent processing, instant transfer functionality, and more, featuring a complete sharing management and access control system.
+tempys is a self-hosted temporary file sharing platform. Focused on providing one-time, temporary file and text upload, processing, and sharing services.
 
-![015 Platform Overview](/.github/image/0.png)
+A modern file sharing website built with **Vue 3 + Nuxt 4 + Go**, supporting file upload, text sharing, image compression, concurrent processing, instant transfer functionality, and more, featuring a complete sharing management and access control system.
 
-English | [中文](README-zh.md)
+![tempys Platform Overview](/.github/image/0.png)
+
+English | [中文](README-zh.md) | [Español](README-es.md)
 
 </div>
 
@@ -19,7 +22,7 @@ English | [中文](README-zh.md)
 🖼️ **High-Performance File Upload** - Supports large file chunked uploads with frontend file hash calculation for instant transfer  
 📱 **Responsive Design** - Modern UI based on Tailwind V4 + Reka UI, adapts to various devices  
 ⚡ **Concurrent Processing** - Uses Web Worker for frontend hash calculation, backend queue system for task processing  
-🌐 **Multi-language Support** - Complete Chinese and English internationalization support  
+🌐 **Multi-language Support** - Complete internationalization support for English, Chinese (Simplified), and Spanish  
 🔗 **Share Management** - Flexible sharing link generation and management system
 
 ### File Processing
@@ -41,31 +44,31 @@ English | [中文](README-zh.md)
 
 ## 📸 Screenshots
 
-| File Selection Upload Page                                   | Text Input Upload Page                                          |
-|---------------------------------------|-----------------------------------------------|
-| ![](/.github/image/1.png) | ![](/.github/image/2.png) |
+| File Selection Upload Page | Text Input Upload Page    |
+| -------------------------- | ------------------------- |
+| ![](/.github/image/1.png)  | ![](/.github/image/2.png) |
 
-| Multiple File Upload                                           | Upload Progress Heatmap                                              |
-|------------------------------------------------|---------------------------------------------------|
+| Multiple File Upload      | Upload Progress Heatmap   |
+| ------------------------- | ------------------------- |
 | ![](/.github/image/3.png) | ![](/.github/image/4.png) |
 
-| Upload Progress Bar                                           | Upload Success Page                                           |
-|------------------------------------------------|-------------------------------------------------|
+| Upload Progress Bar       | Upload Success Page       |
+| ------------------------- | ------------------------- |
 | ![](/.github/image/5.png) | ![](/.github/image/6.png) |
 
 ## 🏗️ Technical Architecture
 
 ### Frontend Tech Stack
 
-- **Vue 3** - Progressive JavaScript framework
-- **Nuxt 3** - Vue.js full-stack framework
-- **TypeScript** - Complete type safety
-- **Tailwind CSS** - Atomic CSS framework
-- **Reka UI** - Modern component library
-- **Pinia** - State management
+- **Vue 3.5** - Progressive JavaScript framework
+- **Nuxt 4** - Vue.js full-stack framework
+- **TypeScript 5.9** - Complete type safety
+- **TailwindCSS v4** - Atomic CSS framework
+- **shadcn-nuxt + Reka UI** - Modern component library
+- **Pinia 3** - State management
 - **TanStack Query** - Data fetching and caching
 - **Vue Router** - Routing management
-- **i18next** - Internationalization support
+- **@nuxtjs/i18n** - Internationalization support
 
 ### Backend Tech Stack
 
@@ -95,12 +98,13 @@ English | [中文](README-zh.md)
 ### Docker
 
 1. Download files
-   - config.example.yaml
-   - docker-compose.yml
+    - config.example.yaml
+    - docker-compose.yml
 
 2. Rename config.example.yaml to config.yaml after configuration
 
 3. Start
+
 ```bash
 docker compose up -d
 ```
@@ -108,43 +112,84 @@ docker compose up -d
 ## 📁 Project Structure
 
 ```
-015/
-├── front/                 # Frontend application (Vue 3 + Nuxt 3)
-│   ├── components/       # Vue components
-│   │   ├── pages/           # Page routes
-│   │   ├── composables/     # Composable functions
-│   │   ├── i18n/           # Internationalization files
-│   │   └── assets/         # Static assets
-│   └── middleware/     # Middleware
-├── backend/             # Backend service (Go + Echo)
-│   ├── internal/       # Internal packages
-│   │   ├── controllers/ # Controllers
-│   │   ├── models/     # Data models
-│   │   ├── services/   # Business logic
-│   │   └── utils/      # Utility functions
-│   └── middleware/     # Middleware
-├── worker/             # Asynchronous task processing (Go + Asynq)
-│   ├── internal/       # Internal packages
-│   │   ├── tasks/      # Task processors
-│   │   └── utils/      # Utility functions
-│   └── middleware/     # Middleware
-└── tmp/               # Temporary files
+tempys/
+├── front/                 # Frontend application (Vue 3.5 + Nuxt 4)
+│   ├── components/        # Vue components
+│   │   ├── pages/         # Page routes
+│   │   ├── composables/   # Composable functions
+│   │   ├── i18n/          # Internationalization files
+│   │   └── assets/        # Static assets
+│   └── middleware/        # Middleware
+├── backend/               # Backend service (Go + Echo)
+│   ├── internal/          # Internal packages
+│   │   ├── controllers/   # Controllers
+│   │   ├── models/        # Data models
+│   │   ├── services/      # Business logic
+│   │   └── utils/          # Utility functions
+│   └── middleware/        # Middleware
+├── worker/                # Asynchronous task processing (Go + Asynq)
+│   ├── internal/          # Internal packages
+│   │   ├── tasks/         # Task processors
+│   │   └── utils/         # Utility functions
+│   └── middleware/        # Middleware
+└── tmp/                   # Temporary files
 ```
 
 ## 🔧 Development Guide
+
+### Prerequisites
+
+- **Node.js** 20+
+- **pnpm** 10+ (package manager)
+- **Go** 1.23+
+- **Redis** (for queue system)
+
+### Quick Start (Development)
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start all services (frontend + backend + worker)
+pnpm dev
+
+# Or start individual services:
+pnpm dev:front    # Frontend on http://localhost:3000
+pnpm dev:backend  # Backend with hot reload
+pnpm dev:worker   # Worker with hot reload
+```
+
+### Linting and Testing
+
+```bash
+# Run all linters
+pnpm lint
+
+# Run backend/worker tests
+pnpm test
+```
 
 ### Code Standards
 
 - Use Prettier for code formatting
 - Use Husky + lint-staged for pre-commit checking
 - Follow TypeScript type safety standards
+- See [AGENTS.md](./AGENTS.md) for detailed coding guidelines
 
 ### Commit Standards
+
+We follow conventional commit format:
+
+```
+<type>(<scope>): <description>
+```
+
+Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`
 
 ```bash
 # Code formatting will run automatically before commit
 git add .
-git commit -m "feat: add new feature"
+git commit -m "feat(i18n): addSpanish language support"
 ```
 
 ### Build and Deploy
@@ -168,7 +213,7 @@ cd worker && go build -o worker .
 - Concurrent chunked upload (using Web Worker)
 - File upload/text upload and sharing
 - Upload statistics page
-- Multi-language support
+- Multi-language support (English, Chinese, Spanish)
 - Maximum upload limits
 - Backend queue system and Worker file processing
 
@@ -192,6 +237,8 @@ This project is licensed under AGPLV3.
 ## 🔗 Related Links
 
 - [Vue 3 Documentation](https://vuejs.org/)
-- [Nuxt 3 Documentation](https://nuxt.com/)
+- [Nuxt 4 Documentation](https://nuxt.com/)
+- [TailwindCSS v4 Documentation](https://tailwindcss.com/)
+- [shadcn-nuxt Documentation](https://shadcn-nuxt.com/)
 - [Echo Framework Documentation](https://echo.labstack.com/)
 - [Asynq Documentation](https://github.com/hibiken/asynq)
