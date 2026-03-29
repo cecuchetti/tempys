@@ -1,4 +1,9 @@
 packages:
-  # all packages in direct subdirs of packages/
-  - 'front'
-  # - '*'
+  - front
+
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - maplibre-gl
+  - sharp
+  - vue-demi
