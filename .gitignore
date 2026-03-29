@@ -18,6 +18,9 @@ logs
 .fleet
 .idea
 
+# Project specific
+AGENTS.md
+
 # Local env files
 .env
 .env.*
