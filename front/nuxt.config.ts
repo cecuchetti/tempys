@@ -24,6 +24,7 @@ export default defineNuxtConfig({
         locales: [
             { code: 'zh-CN', name: '中文(简体)', file: 'zh-CN.json' },
             { code: 'en', name: 'English', file: 'en.json' },
+            { code: 'es', name: 'Español', file: 'es.json' },
         ],
     },
     vite: {
@@ -40,6 +41,6 @@ export default defineNuxtConfig({
         },
     },
     devServer: {
-        port: 5000,
+        port: 3000,
     },
 })

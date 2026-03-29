@@ -13,7 +13,19 @@
         "submit": "Submit",
         "backToHome": "Back to Home"
     },
+    "common": {
+        "days": "d"
+    },
     "page": {
+        "password": {
+            "title": "Enter Password",
+            "placeholder": "Please enter password",
+            "submit": "Submit",
+            "error": "Password error"
+        },
+        "qrCode": {
+            "title": "Share QR Code"
+        },
         "upload": {
             "file": {
                 "uploadFile": "Upload File",
@@ -159,6 +171,24 @@
                 "pickupCode": "Pickup Code",
                 "link": "Link",
                 "content": "Content",
+                "copySuccess": "Copy Success"
+            }
+        },
+        "shareView": {
+            "file": {
+                "title": "Download File",
+                "passwordRequired": "Password Required",
+                "expireTime": "Expire Time",
+                "remainingDownloads": "Remaining Downloads",
+                "tokenError": "Failed to get token",
+                "download": "Download"
+            },
+            "text": {
+                "title": "View Text",
+                "passwordRequired": "Password Required",
+                "expireTime": "Expire Time",
+                "remainingViews": "Remaining Views",
+                "preview": "Preview",
                 "copySuccess": "Copy Success"
             }
         },

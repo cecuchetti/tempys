@@ -13,7 +13,19 @@
         "submit": "提交",
         "backToHome": "返回首页"
     },
+    "common": {
+        "days": "天"
+    },
     "page": {
+        "password": {
+            "title": "输入密码",
+            "placeholder": "请输入密码",
+            "submit": "提交",
+            "error": "密码错误"
+        },
+        "qrCode": {
+            "title": "分享二维码"
+        },
         "upload": {
             "file": {
                 "uploadFile": "上传文件",
@@ -159,6 +171,24 @@
                 "pickupCode": "提取码",
                 "link": "链接",
                 "content": "内容",
+                "copySuccess": "复制成功"
+            }
+        },
+        "shareView": {
+            "file": {
+                "title": "下载文件",
+                "passwordRequired": "需要密码",
+                "expireTime": "过期时间",
+                "remainingDownloads": "剩余下载次数",
+                "tokenError": "获取token失败",
+                "download": "下载"
+            },
+            "text": {
+                "title": "查看文本",
+                "passwordRequired": "需要密码",
+                "expireTime": "过期时间",
+                "remainingViews": "剩余浏览次数",
+                "preview": "浏览",
                 "copySuccess": "复制成功"
             }
         },

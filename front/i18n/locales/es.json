@@ -1,0 +1,215 @@
+{
+    "navbar": {
+        "file": "Archivo",
+        "text": "Texto"
+    },
+    "i18n": {
+        "switchLocale": "Cambiar idioma"
+    },
+    "seo": {
+        "desc": "015 es una plataforma de compartir archivos temporales de código abierto, compatible con carga de archivos grandes por partes, carga de texto temporal, descarga y compartir"
+    },
+    "btn": {
+        "submit": "Enviar",
+        "backToHome": "Volver al inicio"
+    },
+    "common": {
+        "days": "d"
+    },
+    "page": {
+        "password": {
+            "title": "Introduce la contraseña",
+            "placeholder": "Introduce la contraseña",
+            "submit": "Enviar",
+            "error": "Contraseña incorrecta"
+        },
+        "qrCode": {
+            "title": "Compartir código QR"
+        },
+        "upload": {
+            "file": {
+                "uploadFile": "Subir archivo",
+                "uploadFilePlaceholder": "Arrastra y suelta archivos o haz clic para subir",
+                "addMore": "Agregar más",
+                "handleType": {
+                    "file-share": "Compartir archivo",
+                    "file-image-compress": "Comprimir imagen",
+                    "file-image-convert": "Convertir formato"
+                }
+            },
+            "text": {
+                "uploadText": "Subir texto",
+                "uploadTextPlaceholder": "Comparte, traduce, resume, genera imágenes y consulta a grandes modelos con nuestro procesador de texto",
+                "handleType": {
+                    "text-share": "Compartir texto"
+                }
+            },
+            "pickup": {
+                "title": "Introduce el código de recogida",
+                "codeError": "Código de recogida inválido",
+                "btn": "Recoger"
+            }
+        },
+        "shareOptions": {
+            "file": {
+                "title": "Opciones de compartir",
+                "downloadNums": "Número de descargas",
+                "expireTime": "Tiempo de expiración",
+                "or": "o",
+                "expireAfter": "expira",
+                "pickupCode": "Código de recogida",
+                "passwordProtection": "Protección con contraseña",
+                "downloadNotify": "Notificación de descarga",
+                "passwordPlaceholder": "Introduce la contraseña",
+                "emailPlaceholder": "Introduce el correo",
+                "downloadOptions": {
+                    "xdownload": "{0} descargas"
+                },
+                "expireOptions": {
+                    "5min": "5 minutos",
+                    "1hour": "1 hora",
+                    "1day": "1 día",
+                    "3days": "3 días"
+                }
+            },
+            "imageConvert": {
+                "title": "Convertir imagen",
+                "targetFormat": "Formato destino"
+            },
+            "text": {
+                "title": "Opciones de compartir",
+                "viewNums": "Número de vistas",
+                "expireTime": "Tiempo de expiración",
+                "or": "o",
+                "expireAfter": "expira",
+                "pickupCode": "Código de recogida",
+                "passwordProtection": "Protección con contraseña",
+                "readNotify": "Notificación de lectura",
+                "passwordPlaceholder": "Introduce la contraseña",
+                "emailPlaceholder": "Introduce el correo",
+                "viewOptions": {
+                    "xview": "{0} vistas"
+                },
+                "expireOptions": {
+                    "5min": "5 minutos",
+                    "1hour": "1 hora",
+                    "1day": "1 día",
+                    "3days": "3 días"
+                }
+            }
+        },
+        "progress": {
+            "file": {
+                "totalUploadProgress": "Progreso total de subida",
+                "fileList": "Lista de archivos",
+                "fileName": "Nombre del archivo",
+                "fileSize": "Tamaño del archivo",
+                "uploadSpeed": "Velocidad",
+                "progress": "Progreso",
+                "uploadDetails": "Detalles de subida",
+                "chunk": "Parte",
+                "completed": "Completado",
+                "discarded": "Descartado",
+                "pending": "Pendiente",
+                "chunkProgress": "Progreso de partes",
+                "chunkHeatmap": "Mapa de calor de partes",
+                "heatmap": "Mapa de calor",
+                "progressBar": "Barra de progreso",
+                "uploadError": "Error de subida",
+                "chunkUploadFailed": "La parte {1} del archivo {0} falló después de múltiples intentos, hemos terminado la subida del archivo",
+                "chunkUploadRetry": "La parte {1} del archivo {0} falló al subir, lo intentaremos de nuevo más tarde",
+                "fileUploadFailed": "La subida del archivo {0} falló, por favor inténtalo de nuevo",
+                "uploadFailed": "Subida fallida",
+                "processing": {
+                    "hash": "Calculando Hash...",
+                    "create": "Inicializando subida...",
+                    "upload": "Subiendo...",
+                    "finish": "Subida completada"
+                },
+                "instantUploadSuccess": "El archivo con el mismo hash ya existe en la nube, subida instantánea exitosa",
+                "uploadFailedRetry": "Subida fallida, por favor inténtalo más tarde",
+                "uploadSpeedInfo": {
+                    "title": "¿Cómo se calcula la velocidad de subida?",
+                    "desc": {
+                        "base": "La velocidad de subida se estima basándose en {chunkNum} * {chunkSize} subidos en el segundo actual, puede tener algunas desviaciones de la velocidad real de subida, solo como referencia",
+                        "chunkNum": "Número de partes del archivo",
+                        "chunkSize": "Tamaño de cada parte del archivo"
+                    }
+                }
+            }
+        },
+        "result": {
+            "file": {
+                "title": "Subida exitosa",
+                "fileList": "Lista de archivos",
+                "info": "Información",
+                "downloadNums": "Número de descargas",
+                "expireTime": "Tiempo de expiración",
+                "pickupCode": "Código de recogida",
+                "link": "Enlace",
+                "copySuccess": "Copiado con éxito"
+            },
+            "imageCompress": {
+                "title": "Comprimir imagen",
+                "totalSize": "Tamaño total",
+                "task": "Tarea",
+                "retry": "Reintentar {0}/{1}",
+                "failed": "Fallido"
+            },
+            "imageConvert": {
+                "title": "Convertir imagen",
+                "convert": "Convertir",
+                "task": "Tarea",
+                "retry": "Reintentar {0}/{1}",
+                "failed": "Fallido"
+            },
+            "text": {
+                "title": "Compartido con éxito",
+                "info": "Información",
+                "viewNums": "Número de vistas",
+                "expireTime": "Tiempo de expiración",
+                "pickupCode": "Código de recogida",
+                "link": "Enlace",
+                "content": "Contenido",
+                "copySuccess": "Copiado con éxito"
+            }
+        },
+        "shareView": {
+            "file": {
+                "title": "Descargar archivo",
+                "passwordRequired": "Requiere contraseña",
+                "expireTime": "Tiempo de expiración",
+                "remainingDownloads": "Descargas restantes",
+                "tokenError": "Error al obtener token",
+                "download": "Descargar"
+            },
+            "text": {
+                "title": "Ver texto",
+                "passwordRequired": "Requiere contraseña",
+                "expireTime": "Tiempo de expiración",
+                "remainingViews": "Vistas restantes",
+                "preview": "Vista previa",
+                "copySuccess": "¡Copiado con éxito!"
+            }
+        },
+        "about": {
+            "powerBy": "Desarrollado por {0} como una plataforma de compartir archivos temporales de código abierto",
+            "file": "Archivo",
+            "share": "Compartir",
+            "download": "Descargar",
+            "task": "Tarea",
+            "admin": "Administrador del sitio",
+            "author": "Autor",
+            "title": "Acerca de",
+            "about": "Acerca de",
+            "systemInfo": "Información del sistema",
+            "systemVersion": "Versión del sistema",
+            "storage": "Archivos alojados",
+            "analysis": "Análisis",
+            "fileSize": "Tamaño del archivo",
+            "fileNum": "Número de archivos",
+            "processed": "Procesados",
+            "failed": "Fallidos"
+        }
+    }
+}

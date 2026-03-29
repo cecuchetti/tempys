@@ -17,6 +17,8 @@ import PasswallShareDrawer from '~/components/Drawer/PasswallShareDrawer.vue'
 dayjs.extend(duration)
 dayjs.extend(relativeTime)
 
+const { t } = useI18n()
+
 const props = defineProps<{
     data: any
 }>()
@@ -37,12 +39,12 @@ onMounted(() => {
 
 const fileShareInfo = computed(() => {
     return [
-        { label: '需要密码', value: props?.data?.has_password ?? false },
+        { label: t('page.shareView.text.passwordRequired'), value: props?.data?.has_password ?? false },
         {
-            label: '过期时间',
-            value: dayjs.duration(remaining.value, 'seconds').format(`D天 HH:mm:ss`),
+            label: t('page.shareView.text.expireTime'),
+            value: dayjs.duration(remaining.value, 'seconds').format(`D[${t('common.days')}] HH:mm:ss`),
         },
-        { label: '剩余浏览次数', value: props?.data?.download_nums ?? 0 },
+        { label: t('page.shareView.text.remainingViews'), value: props?.data?.download_nums ?? 0 },
     ]
 })
 const previewText = ref<string | null>(null)
@@ -72,7 +74,7 @@ const handlePreview = async () => {
 <template>
     <div :class="cx('flex flex-col max-h-full', !!previewText ? 'gap-3' : 'gap-16 items-center')">
         <div :class="cx('flex flex-row w-full', !!previewText ? 'justify-between' : 'justify-center')">
-            <h1 class="text-xl">查看文本</h1>
+            <h1 class="text-xl">{{ t('page.shareView.text.title') }}</h1>
             <Button
                 v-if="!!previewText"
                 variant="outline"
@@ -80,7 +82,7 @@ const handlePreview = async () => {
                 @click="
                     () => {
                         copy(previewText as string)
-                        toast.success('复制成功')
+                        toast.success(t('page.shareView.text.copySuccess'))
                     }
                 "
             >
@@ -96,7 +98,7 @@ const handlePreview = async () => {
                 </div>
             </div>
             <div class="w-full">
-                <AsyncButton @click="handlePreview" class="w-full">浏览</AsyncButton>
+                <AsyncButton @click="handlePreview" class="w-full">{{ t('page.shareView.text.preview') }}</AsyncButton>
             </div>
         </template>
         <template v-else>

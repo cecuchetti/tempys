@@ -6,8 +6,8 @@
     "scripts": {
         "dev": "concurrently -n front,backend,worker -c blue,green,yellow 'pnpm:dev:front' 'pnpm:dev:backend' 'pnpm:dev:worker'",
         "dev:front": "cd front && pnpm run dev",
-        "dev:backend": "cd backend && air",
-        "dev:worker": "cd worker && air",
+        "dev:backend": "cd backend && $HOME/go/bin/air",
+        "dev:worker": "cd worker && $HOME/go/bin/air",
         "lint": "concurrently -n front,backend,worker -c blue,green,yellow 'pnpm:lint:front' 'pnpm:lint:backend' 'pnpm:lint:worker'",
         "lint:front": "cd front && pnpm nuxt typecheck",
         "lint:backend": "cd backend && golangci-lint run",
