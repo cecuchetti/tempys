@@ -1,7 +1,9 @@
 import { times } from 'lodash-es'
-import { toast } from 'vue-sonner'
+
 declare const window: any
-let shareIdTokenMap: WeakMap<{ share_id: string }, string>
+
+// Cache for share tokens with expiration
+const tokenCache = new Map<string, { token: string; expires: number }>()
 
 const getShareToken = async (
     share_id: string,
@@ -9,36 +11,37 @@ const getShareToken = async (
         password?: string
     }
 ): Promise<string | undefined> => {
-    if (!shareIdTokenMap) {
-        shareIdTokenMap = new WeakMap()
+    const cached = tokenCache.get(share_id)
+    if (cached && cached.expires > Date.now()) {
+        return cached.token
     }
-    let token = shareIdTokenMap.get({ share_id })
+
     const { password } = options || {}
-    if (!token) {
-        const data = await $fetch<{
-            code: number
-            message: string
-            data: {
-                token?: string
-            }
-        }>(`/api/download`, {
-            method: 'POST',
-            body: {
-                share_id,
-                password,
-            },
-        })
-        if (!data?.data?.token) {
-            throw new Error(data?.message || '获取token失败')
+    const data = await $fetch<{
+        code: number
+        message: string
+        data: {
+            token?: string
         }
-        token = data.data.token
-        shareIdTokenMap.set({ share_id }, token)
+    }>(`/download`, {
+        method: 'POST',
+        body: {
+            share_id,
+            password,
+        },
+    })
+    if (!data?.data?.token) {
+        throw new Error(data?.message || '获取token失败')
     }
+
+    const token = data.data.token
+    // Cache for 1 hour (3600000ms)
+    tokenCache.set(share_id, { token, expires: Date.now() + 3600000 })
     return token
 }
 
 const downloadFile = (token: string) => {
-    window?.open(`/api/download?token=${token}`)
+    window?.open(`/download?token=${token}`)
 }
 
 const downloadFileByShareId = async (share_id: string) => {
@@ -59,7 +62,7 @@ const createShare = async (data: any) => {
             file_name?: string
             pickup_code?: string
         }
-    }>(`/api/share`, {
+    }>(`/share`, {
         method: 'POST',
         body: data,
     })

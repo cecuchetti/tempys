@@ -9,7 +9,7 @@ const useMyAppConfig = () => {
             version: string
             build_time: number
         }
-    }>('/api/config')
+    }>('/config')
     return computed(() => data?.value?.data)
 }
 
