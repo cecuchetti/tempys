@@ -21,9 +21,13 @@ site:
     # Obligatorio: tu dominio público.
     url: http://localhost:5000
     title:
-        'en': '015'
+        'en': 'tempys'
+        'es': 'tempys'
+        'zh': 'tempys'
     desc:
-        'en': '015 is an open-source temporary file sharing platform project that supports uploading, downloading, and sharing files and text.'
+        'en': 'tempys is an open-source temporary file sharing platform that supports uploading, downloading, and sharing files and text.'
+        'es': 'tempys es una plataforma de intercambio temporal de archivos de código abierto que soporta subir, descargar y compartir archivos y texto.'
+        'zh': 'tempys 是一个开源的临时文件分享平台，支持上传、下载和分享文件及文本。'
     icon: '/logo.png'
     bg_url: 'https://img.fudaoyuan.icu/api/1/random/?scale_min=1.5&webp=true&md=false&format=302'
 
