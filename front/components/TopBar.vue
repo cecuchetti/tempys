@@ -125,7 +125,7 @@ const handleSetLocale = async (locale: string) => {
                         class="w-[44px] h-[44px] rounded-full bg-primary-container flex items-center justify-center border border-primary/20 overflow-hidden focus-ring"
                         aria-label="User account menu"
                     >
-                        <img src="/logo.png" alt="" class="w-full h-full object-cover" role="presentation" />
+                        <img src="https://i.pravatar.cc/150?img=68" alt="" class="w-full h-full object-cover" role="presentation" />
                     </button>
                 </div>
             </div>
