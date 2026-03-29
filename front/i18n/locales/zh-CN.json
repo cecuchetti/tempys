@@ -3,6 +3,230 @@
         "file": "文件",
         "text": "文本"
     },
+    "sidebar": {
+        "upload": "上传",
+        "text": "共享文本",
+        "links": "我的链接",
+        "analytics": "数据分析",
+        "settings": "设置",
+        "storage": "存储空间",
+        "status": "状态"
+    },
+    "topbar": {
+        "vaultCenter": "文件中心",
+        "sharedText": "共享文本",
+        "myLinks": "我的链接",
+        "analytics": "数据分析引擎",
+        "settings": "设置",
+        "guest": "访客",
+        "freeAccount": "免费账户"
+    },
+    "links": {
+        "title": "我的链接",
+        "subtitle": "工作空间概览",
+        "newLink": "新建链接",
+        "totalActiveLinks": "活跃链接总数",
+        "storageCapacity": "存储容量",
+        "engagement24h": "24小时互动",
+        "storageUsed": "已使用",
+        "showing": "显示 {0} / {1} 个链接",
+        "filter": {
+            "all": "全部",
+            "files": "文件",
+            "text": "文本",
+            "active": "活跃",
+            "expired": "已过期"
+        },
+        "sortByDate": "按日期排序",
+        "table": {
+            "assetName": "资源名称",
+            "shortLink": "短链接",
+            "status": "状态",
+            "clicks": "点击量",
+            "created": "创建时间",
+            "actions": "操作"
+        },
+        "status": {
+            "active": "活跃",
+            "expired": "已过期",
+            "oneTime": "一次性"
+        },
+        "actions": {
+            "copy": "复制链接",
+            "settings": "设置",
+            "delete": "删除",
+            "renew": "续期"
+        },
+        "promo": {
+            "security": {
+                "title": "高级安全",
+                "description": "使用加密保险库和精细过期策略保护您的数字资产。",
+                "cta": "配置策略"
+            },
+            "upload": {
+                "title": "高速上传",
+                "description": "我们的全球网络保证10GB以内文件的即时传输。",
+                "start": "开始",
+                "learnMore": "了解更多"
+            }
+        }
+    },
+    "analytics": {
+        "title": "数据分析引擎",
+        "subtitle": "系统脉搏",
+        "last30Days": "最近30天",
+        "exportReport": "导出报告",
+        "quickActions": "快速操作",
+        "uploadFiles": "上传文件",
+        "uploadFilesDesc": "同步到保险库",
+        "shareText": "分享文本",
+        "shareTextDesc": "安全临时的剪贴板",
+        "myLinks": "我的链接",
+        "myLinksDesc": "管理快速重定向",
+        "weeklyActivity": "周活动",
+        "vsLastWeek": "相比上周",
+        "uploads": "上传",
+        "downloads": "下载",
+        "storageQuota": "存储配额",
+        "used": "已使用",
+        "totalShared": "总分享数",
+        "activeDownloads": "活跃下载",
+        "streamRealTime": "实时流",
+        "recentActivity": "最近活动",
+        "viewHistory": "查看历史",
+        "technicalPerformance": "技术性能",
+        "performanceDesc": "我们的动态引擎实时监控数据流。当前延迟为",
+        "withinParams": "在高性能参数范围内。",
+        "response": "响应",
+        "uptime": "在线时间",
+        "metrics": {
+            "loadIO": "负载 I/O",
+            "security": "安全",
+            "clusters": "集群",
+            "errors": "错误"
+        }
+    },
+    "settings": {
+        "title": "设置面板",
+        "subtitle": "主配置",
+        "discard": "放弃",
+        "saveChanges": "保存更改",
+        "nav": {
+            "profile": "账户和个人资料",
+            "security": "保险库安全",
+            "notifications": "通知",
+            "billing": "存储",
+            "api": "API 和集成"
+        },
+        "logout": "退出登录",
+        "profile": {
+            "publicName": "公开名称",
+            "timezone": "时区",
+            "changeAvatar": "更换"
+        },
+        "preferences": {
+            "title": "界面偏好",
+            "theme": {
+                "light": "明亮",
+                "dark": "黑暗",
+                "system": "系统"
+            }
+        },
+        "security": {
+            "title": "安全和隐私",
+            "twoFactor": {
+                "title": "双因素认证 (2FA)",
+                "description": "添加额外的动态安全层"
+            },
+            "visibility": {
+                "title": "链接可见性",
+                "description": "从搜索引擎隐藏链接"
+            }
+        },
+        "dangerZone": {
+            "title": "危险区域",
+            "description": "删除账户时，您所有的文件、链接和保险库数据将从我们的集群中永久清除。此操作不可逆。",
+            "deleteAccount": "永久删除账户"
+        }
+    },
+    "upload": {
+        "title": "上传",
+        "subtitle": "安全分块传输 • 256位加密",
+        "avgLatency": "平均延迟",
+        "dropzone": {
+            "title": "将文件拖放到此处",
+            "description": "文件在离开浏览器之前会自动分块和哈希。",
+            "browseFiles": "浏览文件"
+        },
+        "settings": {
+            "title": "保险库设置",
+            "passwordProtect": "密码保护",
+            "passwordPlaceholder": "可选",
+            "expiration": "过期时间",
+            "expirationOptions": {
+                "1hour": "1小时",
+                "24hours": "24小时",
+                "7days": "7天",
+                "1download": "下载后"
+            },
+            "pickupCode": "取件码",
+            "active": "激活",
+            "notifyPickup": "取件时通知我"
+        },
+        "queue": {
+            "title": "传输队列",
+            "activeTasks": "个活动任务",
+            "waiting": "等待中",
+            "done": "完成",
+            "failed": "失败",
+            "empty": "没有正在进行的上传。拖放文件开始上传。",
+            "clearCompleted": "清除已完成",
+            "copyLink": "复制链接",
+            "removeItem": "从队列中移除 {name}",
+            "status": {
+                "pending": "等待中",
+                "uploading": "正在上传分块 {current}/{total}",
+                "processing": "处理中...",
+                "complete": "完成",
+                "uploaded": "已上传",
+                "error": "错误"
+            }
+        },
+        "success": {
+            "uploaded": "文件上传成功"
+        },
+        "errors": {
+            "initFailed": "初始化上传失败",
+            "chunkFailed": "上传文件分块失败",
+            "finishFailed": "完成上传失败",
+            "shareFailed": "创建分享链接失败",
+            "uploadFailed": "上传失败，请重试。"
+        }
+    },
+    "textShare": {
+        "title": "共享文本",
+        "subtitle": "安全剪贴板 • 自毁片段",
+        "untitled": "未命名片段...",
+        "lastEdited": "最后编辑于",
+        "generateLink": "生成保险库链接",
+        "editorPlaceholder": "在此粘贴或输入临时内容...",
+        "security": {
+            "title": "保险库安全",
+            "oneTimeRead": {
+                "title": "一次性读取",
+                "description": "打开后销毁"
+            },
+            "autoExpiration": {
+                "title": "自动过期",
+                "description": "片段将在以下时间后消失"
+            },
+            "notifyAccess": "访问时通知我"
+        },
+        "recentSnippets": "最近片段",
+        "viewAll": "查看全部",
+        "created": "创建于",
+        "reads": "次阅读"
+    },
     "i18n": {
         "switchLocale": "切换语言"
     },
@@ -211,5 +435,26 @@
             "processed": "处理数量",
             "failed": "失败数量"
         }
+    },
+    "share": {
+        "backToHome": "返回首页",
+        "untitled": "未命名文件",
+        "expires": "过期时间",
+        "downloads": "下载次数",
+        "security": "安全性",
+        "password": "密码保护",
+        "public": "公开",
+        "pickupCode": "取件码",
+        "download": "下载文件",
+        "downloadStarted": "下载已开始",
+        "downloadFailed": "下载失败",
+        "expired": "链接已过期",
+        "expiredDesc": "此分享链接已过期，不再可用。",
+        "outOfDownloads": "下载次数已用完",
+        "outOfDownloadsDesc": "此链接已达到最大下载次数。",
+        "createNew": "创建新分享",
+        "days": "天",
+        "hours": "小时",
+        "minutes": "分钟"
     }
 }

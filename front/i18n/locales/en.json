@@ -1,10 +1,287 @@
 {
+    "sidebar": {
+        "upload": "Upload",
+        "text": "Shared Text",
+        "links": "My Links",
+        "analytics": "Analytics",
+        "settings": "Settings",
+        "storage": "STORAGE",
+        "status": "Status"
+    },
+    "topbar": {
+        "vaultCenter": "Vault Center",
+        "sharedText": "Shared Text",
+        "myLinks": "My Links",
+        "analytics": "Analytics Engine",
+        "settings": "Settings",
+        "guest": "Guest",
+        "freeAccount": "Free Account"
+    },
     "navbar": {
         "file": "File",
         "text": "Text"
     },
+    "links": {
+        "title": "My Links",
+        "subtitle": "Workspace Overview",
+        "newLink": "New Link",
+        "totalActiveLinks": "Total Active Links",
+        "storageCapacity": "Storage Capacity",
+        "engagement24h": "24h Engagement",
+        "storageUsed": "used",
+        "showing": "Showing {0} of {1} links",
+        "deleteSuccess": "Link deleted successfully",
+        "copied": "Link copied to clipboard",
+        "error": {
+            "title": "Failed to load links",
+            "retry": "Try again"
+        },
+        "empty": {
+            "title": "No links yet",
+            "description": "Create your first share link to get started",
+            "cta": "Upload a file"
+        },
+        "filter": {
+            "all": "All",
+            "files": "Files",
+            "text": "Text",
+            "active": "Active",
+            "expired": "Expired"
+        },
+        "sortByDate": "Sort by date",
+        "table": {
+            "assetName": "Asset Name",
+            "shortLink": "Short Link",
+            "status": "Status",
+            "clicks": "Clicks",
+            "created": "Created",
+            "actions": "Actions"
+        },
+        "status": {
+            "active": "Active",
+            "expired": "Expired",
+            "oneTime": "One-time"
+        },
+        "actions": {
+            "copy": "Copy link",
+            "copyLink": "Copy link to clipboard",
+            "settings": "Settings",
+            "delete": "Delete",
+            "renew": "Renew"
+        },
+        "pagination": {
+            "previous": "Previous page",
+            "next": "Next page",
+            "page": "Go to page {number}"
+        },
+        "promo": {
+            "security": {
+                "title": "Advanced Security",
+                "description": "Protect your digital assets with encrypted vaults and granular expiration policies.",
+                "cta": "Configure Policies"
+            },
+            "upload": {
+                "title": "High-speed Upload",
+                "description": "Our global network guarantees instant transfers for files up to 10GB.",
+                "start": "Start",
+                "learnMore": "Learn more"
+            }
+        }
+    },
+    "analytics": {
+        "title": "Analytics Engine",
+        "subtitle": "System Pulse",
+        "last30Days": "Last 30 Days",
+        "exportReport": "Export Report",
+        "quickActions": "Quick Actions",
+        "uploadFiles": "Upload Files",
+        "uploadFilesDesc": "Sync with vault",
+        "shareText": "Share Text",
+        "shareTextDesc": "Secure temporary clipboard",
+        "myLinks": "My Links",
+        "myLinksDesc": "Manage quick redirects",
+        "weeklyActivity": "Weekly Activity",
+        "vsLastWeek": "vs last week",
+        "uploads": "Uploads",
+        "downloads": "Downloads",
+        "storageQuota": "Storage Quota",
+        "used": "USED",
+        "totalShared": "Total Shared",
+        "activeDownloads": "Active Downloads",
+        "streamRealTime": "Stream in real time",
+        "recentActivity": "Recent Activity",
+        "viewHistory": "View History",
+        "technicalPerformance": "Technical Performance",
+        "performanceDesc": "Our kinetic engine monitors data flow in real time. Current latency is",
+        "withinParams": "within high performance parameters.",
+        "response": "Response",
+        "uptime": "Uptime",
+        "metrics": {
+            "loadIO": "Load I/O",
+            "security": "Security",
+            "clusters": "Clusters",
+            "errors": "Errors"
+        },
+        "error": {
+            "title": "Failed to load analytics",
+            "retry": "Try again"
+        }
+    },
+    "settings": {
+        "title": "Settings Panel",
+        "subtitle": "Master Configuration",
+        "discard": "Discard",
+        "saveChanges": "Save Changes",
+        "nav": {
+            "profile": "Account & Profile",
+            "security": "Vault Security",
+            "notifications": "Notifications",
+            "billing": "Storage",
+            "api": "API & Integrations"
+        },
+        "logout": "Log Out",
+        "profile": {
+            "publicName": "Public Name",
+            "timezone": "Timezone",
+            "changeAvatar": "Change"
+        },
+        "preferences": {
+            "title": "Interface Preferences",
+            "theme": {
+                "light": "Light",
+                "dark": "Dark",
+                "system": "System"
+            }
+        },
+        "security": {
+            "title": "Security & Privacy",
+            "twoFactor": {
+                "title": "Two-Factor Authentication (2FA)",
+                "description": "Add an extra layer of kinetic security",
+                "enable": "Enable two-factor authentication",
+                "disable": "Disable two-factor authentication",
+                "enabled": "Two-factor authentication enabled",
+                "disabled": "Two-factor authentication disabled"
+            },
+            "visibility": {
+                "title": "Link Visibility",
+                "description": "Hide links from search engines",
+                "show": "Show links in search engines",
+                "hide": "Hide links from search engines",
+                "hidden": "Links hidden from search engines",
+                "visible": "Links visible in search engines"
+            }
+        },
+        "dangerZone": {
+            "title": "Danger Zone",
+            "description": "When you delete your account, all your files, links, and vault data will be permanently purged from our clusters. This action is irreversible.",
+            "deleteAccount": "Delete Account Permanently"
+        }
+    },
+    "upload": {
+        "title": "Upload",
+        "subtitle": "Secure Chunked Transfer• 256-bit Encryption",
+        "avgLatency": "Avg Latency",
+        "dropzone": {
+            "title": "Drop the payloads here",
+            "description": "Files are automatically chunked and hashed before leaving your browser.",
+            "browseFiles": "Browse Files"
+        },
+        "settings": {
+            "title": "Vault Settings",
+            "passwordProtect": "Password Protect",
+            "passwordPlaceholder": "Optional",
+            "expiration": "Expiration",
+            "expirationOptions": {
+                "1hour": "1 Hour",
+                "24hours": "24 Hours",
+                "7days": "7 Days",
+                "1download": "After 1 Download"
+            },
+            "pickupCode": "Pick-up Code",
+            "active": "Active",
+            "notifyPickup": "Notify me on pick-up"
+        },
+        "queue": {
+            "title": "Transfer Queue",
+            "activeTasks": "active tasks",
+            "waiting": "Waiting",
+            "done": "Done",
+            "failed": "Failed",
+            "empty": "No uploads in progress. Drop files above to start.",
+            "clearCompleted": "Clear completed",
+            "copyLink": "Copy link",
+            "removeItem": "Remove {name} from queue",
+            "status": {
+                "pending": "Pending",
+                "uploading": "Uploading chunk {current} of {total}",
+                "processing": "Processing...",
+                "complete": "Complete",
+                "uploaded": "Uploaded",
+                "error": "Error"
+            }
+        },
+        "success": {
+            "uploaded": "File uploaded successfully"
+        },
+        "errors": {
+            "initFailed": "Failed to initialize upload",
+            "chunkFailed": "Failed to upload file chunk",
+            "finishFailed": "Failed to finish upload",
+            "shareFailed": "Failed to create share link",
+            "uploadFailed": "Upload failed. Please try again."
+        }
+    },
+    "textShare": {
+        "title": "Shared Text",
+        "subtitle": "Secure Clipboard • Self-destructing snippets",
+        "untitled": "Untitled Snippet...",
+        "lastEdited": "Last edited",
+        "generateLink": "GENERATE VAULT LINK",
+        "editorPlaceholder": "Paste or type temporary content here...",
+        "security": {
+            "title": "Vault Security",
+            "oneTimeRead": {
+                "title": "One-time read",
+                "description": "Destroy after opening",
+                "enable": "Enable one-time read",
+                "disable": "Disable one-time read",
+                "enabled": "One-time read enabled",
+                "disabled": "One-time read disabled"
+            },
+            "autoExpiration": {
+                "title": "Auto-Expiration",
+                "description": "Snippet will vanish in"
+            },
+            "notifyAccess": "Notify me on access"
+        },
+        "recentSnippets": "Recent Snippets",
+        "viewAll": "View All",
+        "created": "Created",
+        "reads": "Read"
+    },
     "i18n": {
         "switchLocale": "Switch Language"
+    },
+    "errors": {
+        "loadFailed": "Failed to load data",
+        "saveFailed": "Failed to save changes",
+        "deleteFailed": "Failed to delete",
+        "networkError": "Network error. Please check your connection.",
+        "serverError": "Server error. Please try again later."
+    },
+    "common": {
+        "days": "d",
+        "loading": "Loading...",
+        "retry": "Try Again",
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "edit": "Edit",
+        "close": "Close",
+        "confirm": "Confirm",
+        "success": "Success",
+        "error": "Error"
     },
     "seo": {
         "desc": "tempys is a temporary file sharing platform project, supporting temporary large file slicing upload, temporary text upload, download and share"
@@ -12,9 +289,6 @@
     "btn": {
         "submit": "Submit",
         "backToHome": "Back to Home"
-    },
-    "common": {
-        "days": "d"
     },
     "page": {
         "password": {
@@ -211,5 +485,26 @@
             "processed": "Processed",
             "failed": "Failed"
         }
+    },
+    "share": {
+        "backToHome": "Back to home",
+        "untitled": "Untitled file",
+        "expires": "Expires",
+        "downloads": "Downloads",
+        "security": "Security",
+        "password": "Password",
+        "public": "Public",
+        "pickupCode": "Pickup Code",
+        "download": "Download File",
+        "downloadStarted": "Download started",
+        "downloadFailed": "Download failed",
+        "expired": "Link Expired",
+        "expiredDesc": "This share link has expired and is no longer available.",
+        "outOfDownloads": "Out of Downloads",
+        "outOfDownloadsDesc": "This share has reached its maximum number of downloads.",
+        "createNew": "Create new share",
+        "days": "days",
+        "hours": "hours",
+        "minutes": "minutes"
     }
 }

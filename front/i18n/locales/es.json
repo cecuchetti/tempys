@@ -1,10 +1,287 @@
 {
+    "sidebar": {
+        "upload": "Subir",
+        "text": "Texto compartido",
+        "links": "Mis enlaces",
+        "analytics": "Análisis",
+        "settings": "Configuración",
+        "storage": "ALMACENAMIENTO",
+        "status": "Estado"
+    },
+    "topbar": {
+        "vaultCenter": "Centro de la Bóveda",
+        "sharedText": "Texto compartido",
+        "myLinks": "Mis enlaces",
+        "analytics": "Motor de análisis",
+        "settings": "Configuración",
+        "guest": "Invitado",
+        "freeAccount": "Cuenta gratuita"
+    },
     "navbar": {
         "file": "Archivo",
         "text": "Texto"
     },
+    "links": {
+        "title": "Mis enlaces",
+        "subtitle": "Vista del espacio de trabajo",
+        "newLink": "Nuevo enlace",
+        "totalActiveLinks": "Enlaces activos totales",
+        "storageCapacity": "Capacidad de almacenamiento",
+        "engagement24h": "Compromiso 24h",
+        "storageUsed": "usado",
+        "showing": "Mostrando {0} de {1} enlaces",
+        "deleteSuccess": "Enlace eliminado correctamente",
+        "copied": "Enlace copiado al portapapeles",
+        "error": {
+            "title": "Error al cargar enlaces",
+            "retry": "Reintentar"
+        },
+        "empty": {
+            "title": "Sin enlaces todavía",
+            "description": "Crea tu primer enlace para comenzar",
+            "cta": "Subir un archivo"
+        },
+        "filter": {
+            "all": "Todos",
+            "files": "Archivos",
+            "text": "Texto",
+            "active": "Activos",
+            "expired": "Expirados"
+        },
+        "sortByDate": "Ordenar por fecha",
+        "table": {
+            "assetName": "Nombre del activo",
+            "shortLink": "Enlace corto",
+            "status": "Estado",
+            "clicks": "Clics",
+            "created": "Creado",
+            "actions": "Acciones"
+        },
+        "status": {
+            "active": "Activo",
+            "expired": "Expirado",
+            "oneTime": "Una vez"
+        },
+        "actions": {
+            "copy": "Copiar enlace",
+            "copyLink": "Copiar enlace al portapapeles",
+            "settings": "Configuración",
+            "delete": "Eliminar",
+            "renew": "Renovar"
+        },
+        "pagination": {
+            "previous": "Página anterior",
+            "next": "Página siguiente",
+            "page": "Ir a página {number}"
+        },
+        "promo": {
+            "security": {
+                "title": "Seguridad avanzada",
+                "description": "Protege tus activos digitales con bóvedas encriptadas y políticas de expiración granulares.",
+                "cta": "Configurar políticas"
+            },
+            "upload": {
+                "title": "Subida de alta velocidad",
+                "description": "Nuestra red global garantiza transferencias instantáneas de hasta 10GB.",
+                "start": "Comenzar",
+                "learnMore": "Más información"
+            }
+        }
+    },
+    "analytics": {
+        "title": "Motor de análisis",
+        "subtitle": "Pulso del sistema",
+        "last30Days": "Últimos 30 días",
+        "exportReport": "Exportar informe",
+        "quickActions": "Acciones rápidas",
+        "uploadFiles": "Subir archivos",
+        "uploadFilesDesc": "Sincronizar con bóveda",
+        "shareText": "Compartir texto",
+        "shareTextDesc": "Portapapeles temporal seguro",
+        "myLinks": "Mis enlaces",
+        "myLinksDesc": "Gestionar redirecciones rápidas",
+        "weeklyActivity": "Actividad semanal",
+        "vsLastWeek": "vs semana anterior",
+        "uploads": "Subidas",
+        "downloads": "Descargas",
+        "storageQuota": "Cuota de almacenamiento",
+        "used": "USADO",
+        "totalShared": "Total compartido",
+        "activeDownloads": "Descargas activas",
+        "streamRealTime": "Transmisión en tiempo real",
+        "recentActivity": "Actividad reciente",
+        "viewHistory": "Ver historial",
+        "technicalPerformance": "Rendimiento técnico",
+        "performanceDesc": "Nuestro motor cinético monitorea el flujo de datos en tiempo real. La latencia actual es",
+        "withinParams": "dentro de parámetros de alto rendimiento.",
+        "response": "Respuesta",
+        "uptime": "Tiempo activo",
+        "metrics": {
+            "loadIO": "Carga E/S",
+            "security": "Seguridad",
+            "clusters": "Clústeres",
+            "errors": "Errores"
+        },
+        "error": {
+            "title": "Error al cargar análisis",
+            "retry": "Reintentar"
+        }
+    },
+    "settings": {
+        "title": "Panel de configuración",
+        "subtitle": "Configuración maestra",
+        "discard": "Descartar",
+        "saveChanges": "Guardar cambios",
+        "nav": {
+            "profile": "Cuenta y perfil",
+            "security": "Seguridad de la bóveda",
+            "notifications": "Notificaciones",
+            "billing": "Almacenamiento",
+            "api": "API e integraciones"
+        },
+        "logout": "Cerrar sesión",
+        "profile": {
+            "publicName": "Nombre público",
+            "timezone": "Zona horaria",
+            "changeAvatar": "Cambiar"
+        },
+        "preferences": {
+            "title": "Preferencias de interfaz",
+            "theme": {
+                "light": "Claro",
+                "dark": "Oscuro",
+                "system": "Sistema"
+            }
+        },
+        "security": {
+            "title": "Seguridad y privacidad",
+            "twoFactor": {
+                "title": "Autenticación de dos factores (2FA)",
+                "description": "Añade una capa extra de seguridad cinética",
+                "enable": "Habilitar autenticación de dos factores",
+                "disable": "Deshabilitar autenticación de dos factores",
+                "enabled": "Autenticación de dos factores habilitada",
+                "disabled": "Autenticación de dos factores deshabilitada"
+            },
+            "visibility": {
+                "title": "Visibilidad del enlace",
+                "description": "Ocultar enlaces de motores de búsqueda",
+                "show": "Mostrar enlaces en motores de búsqueda",
+                "hide": "Ocultar enlaces de motores de búsqueda",
+                "hidden": "Enlaces ocultos de motores de búsqueda",
+                "visible": "Enlaces visibles en motores de búsqueda"
+            }
+        },
+        "dangerZone": {
+            "title": "Zona de peligro",
+            "description": "Cuando eliminas tu cuenta, todos tus archivos, enlaces y datos de la bóveda serán eliminados permanentemente de nuestros clústeres. Esta acción es irreversible.",
+            "deleteAccount": "Eliminar cuenta permanentemente"
+        }
+    },
+    "upload": {
+        "title": "Subir",
+        "subtitle": "Transferencia fragmentada segura • Encriptación de 256 bits",
+        "avgLatency": "Latencia promedio",
+        "dropzone": {
+            "title": "Suelta los archivos aquí",
+            "description": "Los archivos se fragmentan y hashean automáticamente antes de salir de tu navegador.",
+            "browseFiles": "Explorar archivos"
+        },
+        "settings": {
+            "title": "Configuración de bóveda",
+            "passwordProtect": "Proteger con contraseña",
+            "passwordPlaceholder": "Opcional",
+            "expiration": "Expiración",
+            "expirationOptions": {
+                "1hour": "1 Hora",
+                "24hours": "24 Horas",
+                "7days": "7 Días",
+                "1download": "Después de 1 descarga"
+            },
+            "pickupCode": "Código de recogida",
+            "active": "Activo",
+            "notifyPickup": "Notificarme al recoger"
+        },
+        "queue": {
+            "title": "Cola de transferencia",
+            "activeTasks": "tareas activas",
+            "waiting": "Esperando",
+            "done": "Completado",
+            "failed": "Fallido",
+            "empty": "No hay cargas en progreso. Suelta archivos arriba para comenzar.",
+            "clearCompleted": "Limpiar completados",
+            "copyLink": "Copiar enlace",
+            "removeItem": "Eliminar {name} de la cola",
+            "status": {
+                "pending": "Pendiente",
+                "uploading": "Subiendo fragmento {current} de {total}",
+                "processing": "Procesando...",
+                "complete": "Completado",
+                "uploaded": "Subido",
+                "error": "Error"
+            }
+        },
+        "success": {
+            "uploaded": "Archivo subido exitosamente"
+        },
+        "errors": {
+            "initFailed": "Error al inicializar la carga",
+            "chunkFailed": "Error al subir fragmento del archivo",
+            "finishFailed": "Error al finalizar la carga",
+            "shareFailed": "Error al crear enlace para compartir",
+            "uploadFailed": "Error al subir. Por favor, inténtalo de nuevo."
+        }
+    },
+    "textShare": {
+        "title": "Texto compartido",
+        "subtitle": "Portapapeles seguro • Fragmentos autodestructibles",
+        "untitled": "Fragmento sin título...",
+        "lastEdited": "Última edición",
+        "generateLink": "GENERAR ENLACE DE BÓVEDA",
+        "editorPlaceholder": "Pega o escribe contenido temporal aquí...",
+        "security": {
+            "title": "Seguridad de bóveda",
+            "oneTimeRead": {
+                "title": "Lectura única",
+                "description": "Destruir después de abrir",
+                "enable": "Habilitar lectura única",
+                "disable": "Deshabilitar lectura única",
+                "enabled": "Lectura única habilitada",
+                "disabled": "Lectura única deshabilitada"
+            },
+            "autoExpiration": {
+                "title": "Auto-expiración",
+                "description": "El fragmento desaparecerá en"
+            },
+            "notifyAccess": "Notificarme al acceder"
+        },
+        "recentSnippets": "Fragmentos recientes",
+        "viewAll": "Ver todo",
+        "created": "Creado",
+        "reads": "Lecturas"
+    },
     "i18n": {
         "switchLocale": "Cambiar idioma"
+    },
+    "errors": {
+        "loadFailed": "Error al cargar datos",
+        "saveFailed": "Error al guardar cambios",
+        "deleteFailed": "Error al eliminar",
+        "networkError": "Error de red. Por favor, verifica tu conexión.",
+        "serverError": "Error del servidor. Por favor, inténtalo más tarde."
+    },
+    "common": {
+        "days": "d",
+        "loading": "Cargando...",
+        "retry": "Reintentar",
+        "save": "Guardar",
+        "cancel": "Cancelar",
+        "delete": "Eliminar",
+        "edit": "Editar",
+        "close": "Cerrar",
+        "confirm": "Confirmar",
+        "success": "Éxito",
+        "error": "Error"
     },
     "seo": {
         "desc": "tempys es una plataforma de compartir archivos temporales de código abierto, compatible con carga de archivos grandes por partes, carga de texto temporal, descarga y compartir"
@@ -12,9 +289,6 @@
     "btn": {
         "submit": "Enviar",
         "backToHome": "Volver al inicio"
-    },
-    "common": {
-        "days": "d"
     },
     "page": {
         "password": {
@@ -211,5 +485,26 @@
             "processed": "Procesados",
             "failed": "Fallidos"
         }
+    },
+    "share": {
+        "backToHome": "Volver al inicio",
+        "untitled": "Archivo sin título",
+        "expires": "Expira",
+        "downloads": "Descargas",
+        "security": "Seguridad",
+        "password": "Contraseña",
+        "public": "Público",
+        "pickupCode": "Código de recogida",
+        "download": "Descargar archivo",
+        "downloadStarted": "Descarga iniciada",
+        "downloadFailed": "Error en la descarga",
+        "expired": "Enlace expirado",
+        "expiredDesc": "Este enlace ha expirado y ya no está disponible.",
+        "outOfDownloads": "Sin descargas disponibles",
+        "outOfDownloadsDesc": "Este enlace ha alcanzado el máximo de descargas.",
+        "createNew": "Crear nuevo enlace",
+        "days": "días",
+        "hours": "horas",
+        "minutes": "minutos"
     }
 }
