@@ -21,6 +21,13 @@ logs
 # Project specific
 AGENTS.md
 
+# AI-generated documentation
+ai/
+prototipo-tempys/
+front/DESIGN-SYSTEM*.md
+front/PHASE*.md
+front/ORCHESTRATION*.md
+
 # Local env files
 .env
 .env.*
