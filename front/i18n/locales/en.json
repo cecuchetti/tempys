@@ -3,6 +3,7 @@
         "upload": "Upload",
         "text": "Shared Text",
         "links": "My Links",
+        "recipients": "Recipients",
         "analytics": "Analytics",
         "settings": "Settings",
         "storage": "STORAGE",
@@ -506,5 +507,176 @@
         "days": "days",
         "hours": "hours",
         "minutes": "minutes"
+    },
+    "recipients": {
+        "title": "Recipients",
+        "subtitle": "Manage your shared content recipients",
+        "tabs": {
+            "recipients": "Recipients",
+            "groups": "Groups",
+            "send": "Send"
+        },
+        "recipients": {
+            "stats": {
+                "total": "Total Recipients",
+                "thisWeek": "This Week",
+                "byShare": "Unique Shares"
+            },
+            "table": {
+                "name": "Name",
+                "contact": "Contact",
+                "share": "Share",
+                "joined": "Joined",
+                "actions": "Actions",
+                "empty": {
+                    "title": "No recipients yet",
+                    "description": "Recipients will appear here once people register for your shared content."
+                }
+            },
+            "filter": {
+                "label": "Filter by Share",
+                "all": "All Shares"
+            },
+            "error": {
+                "title": "Failed to load recipients"
+            },
+            "deleted": "Recipient deleted",
+            "empty": {
+                "title": "No recipients yet",
+                "description": "Recipients will appear here once people register for your shared content."
+            },
+            "actions": {
+                "delete": "Delete recipient"
+            }
+        },
+        "groups": {
+            "description": "Organize your recipients into groups for easier distribution",
+            "title": "Groups",
+            "create": "Create Group",
+            "edit": "Edit Group",
+            "delete": "Delete Group",
+            "deleteConfirm": "Are you sure you want to delete this group?",
+            "name": "Group Name",
+            "namePlaceholder": "Engineering Team",
+            "memberCount": "{count} members",
+            "selectRecipients": "Select Recipients",
+            "selected": "{count} recipients selected",
+            "created": "Group created",
+            "updated": "Group updated",
+            "deleted": "Group deleted",
+            "empty": {
+                "title": "No groups yet",
+                "description": "Create groups to organize your recipients for easier distribution."
+            },
+            "actions": {
+                "edit": "Edit group",
+                "delete": "Delete group"
+            },
+            "modal": {
+                "createTitle": "Create Group",
+                "editTitle": "Edit Group",
+                "nameLabel": "Group Name",
+                "namePlaceholder": "Engineering Team",
+                "membersLabel": "Select Recipients",
+                "selectedCount": "{count} recipients selected",
+                "noRecipients": "No recipients available"
+            }
+        },
+        "send": {
+            "title": "Send Content",
+            "yourShareLinks": "Your Share Links",
+            "shareLinksDesc": "Copy these URLs and share them with your recipients:",
+            "noShares": "No shares yet. Create a share first.",
+            "createShare": "Create Share",
+            "copy": "Copy",
+            "copied": "URL copied to clipboard!",
+            "shareNote": "Recipients who visit this URL will be able to register with their name and email/phone.",
+            "orSend": "OR send to existing group",
+            "howItWorks": "How it works",
+            "howItWorksDesc": "Recipients who register through this link:",
+            "step1": "Enter their name + email/phone",
+            "step2": "Automatically added to All Recipients group",
+            "step3": "You can then send content via email",
+            "selectGroup": "Select Group",
+            "selectGroupPlaceholder": "Choose a group...",
+            "selectShares": "Select Shares",
+            "preview": "Preview",
+            "previewTo": "To",
+            "emails": "Emails",
+            "emailsTotal": "emails total",
+            "content": "Content",
+            "recipients": "recipients",
+            "sendEmail": "Send via Email",
+            "sendSms": "Send via SMS",
+            "smsSuccess": "SMS sent to {count} recipients",
+            "sending": "Sending...",
+            "success": "Sent successfully to {count} recipients",
+            "failed": "Failed to send to {count} recipients",
+            "noGroup": "Select a group to send content",
+            "noShares": "Select at least one share to send",
+            "selectAll": "Select all",
+            "result": {
+                "title": "Send Result",
+                "sent": "{count} emails sent successfully"
+            },
+            "preview": {
+                "to": "To",
+                "emails": "Emails",
+                "emailsTotal": "emails total",
+                "content": "Content"
+            }
+        },
+        "form": {
+            "title": "Access Content",
+            "name": "Your Name",
+            "namePlaceholder": "Enter your name",
+            "contactType": "Contact Preference",
+            "email": "Email",
+            "phone": "Phone",
+            "emailPlaceholder": "name{'@'}example.com",
+            "phonePlaceholder": "+1 (555) 000-0000",
+            "submit": "Access Content",
+            "submitting": "Submitting...",
+            "privacyNote": "By submitting, you agree to our privacy policy.",
+            "success": {
+                "title": "You're all set!",
+                "description": "Redirecting you to the content..."
+            },
+            "alreadyRegistered": {
+                "title": "Already registered",
+                "description": "You have already registered for this share."
+            },
+            "errors": {
+                "nameMinLength": "Name must be at least 2 characters",
+                "invalidEmail": "Please enter a valid email address",
+                "invalidPhone": "Please enter a valid phone number",
+                "submitFailed": "Something went wrong. Please try again."
+            }
+        },
+        "public": {
+            "tagline": "Share Files & Text Securely",
+            "pageTitle": "Register",
+            "registerTitle": "Register Your Information",
+            "registerSubtitle": "Please provide your contact information to be added to our distribution list.",
+            "notFound": "Share not found",
+            "notFoundDesc": "This share link is invalid or has expired.",
+            "defaultTitle": "Shared Content",
+            "defaultDescription": "Please enter your details to access this content.",
+            "footer": {
+                "privacy": "Privacy Policy",
+                "terms": "Terms of Service",
+                "rights": "All rights reserved."
+            }
+        },
+        "actions": {
+            "delete": "Delete",
+            "edit": "Edit",
+            "retry": "Retry"
+        },
+        "footer": {
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service",
+            "rights": "All rights reserved."
+        }
     }
 }

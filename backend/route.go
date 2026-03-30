@@ -12,6 +12,13 @@ type Route struct {
 	Handler func(c echo.Context) error
 }
 
+// Public routes - no auth required
+var publicRoutes = []Route{
+	// Recipient public endpoints
+	{Method: []string{"GET"}, Path: "/recipient/page/:shareId", Handler: controllers.GetRecipientPage},
+	{Method: []string{"POST"}, Path: "/recipient", Handler: controllers.CreateRecipient},
+}
+
 var routes = []Route{
 	{Method: []string{"POST"}, Path: "/file/create", Handler: controllers.CreateUploadTask},
 	{Method: []string{"POST"}, Path: "/file/slice", Handler: controllers.UploadFileSlice},
@@ -32,4 +39,17 @@ var routes = []Route{
 
 	{Method: []string{"POST"}, Path: "/task/:type", Handler: controllers.CreateTask},
 	{Method: []string{"GET"}, Path: "/task/:id", Handler: controllers.GetTask},
+
+	// Recipient endpoints
+	{Method: []string{"GET"}, Path: "/recipient", Handler: controllers.ListRecipients},
+	{Method: []string{"DELETE"}, Path: "/recipient/:id", Handler: controllers.DeleteRecipient},
+
+	// Group endpoints
+	{Method: []string{"GET"}, Path: "/group", Handler: controllers.ListGroups},
+	{Method: []string{"POST"}, Path: "/group", Handler: controllers.CreateGroup},
+	{Method: []string{"PUT"}, Path: "/group/:id", Handler: controllers.UpdateGroup},
+	{Method: []string{"DELETE"}, Path: "/group/:id", Handler: controllers.DeleteGroup},
+
+	// Send endpoint
+	{Method: []string{"POST"}, Path: "/group/:id/send", Handler: controllers.SendToGroup},
 }

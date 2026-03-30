@@ -1,8 +1,17 @@
 {
+    "public": {
+        "tagline": "Comparte archivos y texto de forma segura",
+        "footer": {
+            "privacy": "Política de Privacidad",
+            "terms": "Términos de Servicio",
+            "rights": "Todos los derechos reservados."
+        }
+    },
     "sidebar": {
         "upload": "Subir",
         "text": "Texto compartido",
         "links": "Mis enlaces",
+        "recipients": "Destinatarios",
         "analytics": "Análisis",
         "settings": "Configuración",
         "storage": "ALMACENAMIENTO",
@@ -506,5 +515,176 @@
         "days": "días",
         "hours": "horas",
         "minutes": "minutos"
+    },
+    "recipients": {
+        "title": "Destinatarios",
+        "subtitle": "Gestiona los destinatarios de tu contenido compartido",
+        "tabs": {
+            "recipients": "Destinatarios",
+            "groups": "Grupos",
+            "send": "Enviar"
+        },
+        "recipients": {
+            "stats": {
+                "total": "Total de Destinatarios",
+                "thisWeek": "Esta Semana",
+                "byShare": "Compartidos Únicos"
+            },
+            "table": {
+                "name": "Nombre",
+                "contact": "Contacto",
+                "share": "Compartido",
+                "joined": "Registrado",
+                "actions": "Acciones",
+                "empty": {
+                    "title": "Sin destinatarios todavía",
+                    "description": "Los destinatarios aparecerán aquí cuando la gente se registre para acceder a tu contenido compartido."
+                }
+            },
+            "filter": {
+                "label": "Filtrar por Compartido",
+                "all": "Todos los Compartidos"
+            },
+            "error": {
+                "title": "Error al cargar destinatarios"
+            },
+            "deleted": "Destinatario eliminado",
+            "empty": {
+                "title": "Sin destinatarios todavía",
+                "description": "Los destinatarios aparecerán aquí cuando la gente se registre para acceder a tu contenido compartido."
+            },
+            "actions": {
+                "delete": "Eliminar destinatario"
+            }
+        },
+        "groups": {
+            "description": "Organiza tus destinatarios en grupos para facilitar la distribución",
+            "title": "Grupos",
+            "create": "Crear Grupo",
+            "edit": "Editar Grupo",
+            "delete": "Eliminar Grupo",
+            "deleteConfirm": "¿Estás seguro de que quieres eliminar este grupo?",
+            "name": "Nombre del Grupo",
+            "namePlaceholder": "Equipo de Ingeniería",
+            "memberCount": "{count} miembros",
+            "selectRecipients": "Seleccionar Destinatarios",
+            "selected": "{count} destinatarios seleccionados",
+            "created": "Grupo creado",
+            "updated": "Grupo actualizado",
+            "deleted": "Grupo eliminado",
+            "empty": {
+                "title": "Sin grupos todavía",
+                "description": "Crea grupos para organizar tus destinatarios y facilitar la distribución."
+            },
+            "actions": {
+                "edit": "Editar grupo",
+                "delete": "Eliminar grupo"
+            },
+            "modal": {
+                "createTitle": "Crear Grupo",
+                "editTitle": "Editar Grupo",
+                "nameLabel": "Nombre del Grupo",
+                "namePlaceholder": "Equipo de Ingeniería",
+                "membersLabel": "Seleccionar Destinatarios",
+                "selectedCount": "{count} destinatarios seleccionados",
+                "noRecipients": "No hay destinatarios disponibles"
+            }
+        },
+        "send": {
+            "title": "Enviar Contenido",
+            "yourShareLinks": "Tus Enlaces para Compartir",
+            "shareLinksDesc": "Copia estas URLs y compártelas con tus destinatarios:",
+            "noShares": "No hay compartidos aún. Crea uno primero.",
+            "createShare": "Crear Compartido",
+            "copy": "Copiar",
+            "copied": "URL copiada al portapapeles!",
+            "shareNote": "Los destinatarios que visiten esta URL podrán registrarse con su nombre y correo/teléfono.",
+            "orSend": "O enviar a un grupo existente",
+            "howItWorks": "Cómo funciona",
+            "howItWorksDesc": "Los destinatarios que se registren a través de este enlace:",
+            "step1": "Ingresan su nombre + correo/teléfono",
+            "step2": "Se añaden automáticamente al grupo Todos los Destinatarios",
+            "step3": "Luego puedes enviarles contenido por correo",
+            "selectGroup": "Seleccionar Grupo",
+            "selectGroupPlaceholder": "Elige un grupo...",
+            "selectShares": "Seleccionar Compartidos",
+            "preview": "Vista Previa",
+            "previewTo": "Para",
+            "emails": "Correos",
+            "emailsTotal": "correos en total",
+            "content": "Contenido",
+            "recipients": "destinatarios",
+            "sendEmail": "Enviar por Correo",
+            "sendSms": "Enviar por SMS",
+            "smsSuccess": "SMS enviado a {count} destinatarios",
+            "sending": "Enviando...",
+            "success": "Enviado exitosamente a {count} destinatarios",
+            "failed": "Error al enviar a {count} destinatarios",
+            "noGroup": "Selecciona un grupo para enviar contenido",
+            "noShares": "Selecciona al menos un compartido para enviar",
+            "selectAll": "Seleccionar todo",
+            "result": {
+                "title": "Resultado del Envío",
+                "sent": "{count} correos enviados exitosamente"
+            },
+            "preview": {
+                "to": "Para",
+                "emails": "Correos",
+                "emailsTotal": "correos en total",
+                "content": "Contenido"
+            }
+        },
+        "form": {
+            "title": "Acceder al Contenido",
+            "name": "Tu Nombre",
+            "namePlaceholder": "Introduce tu nombre",
+            "contactType": "Preferencia de Contacto",
+            "email": "Correo",
+            "phone": "Teléfono",
+            "emailPlaceholder": "nombre{'@'}ejemplo.com",
+            "phonePlaceholder": "+1 (555) 000-0000",
+            "submit": "Acceder al Contenido",
+            "submitting": "Enviando...",
+            "privacyNote": "Al enviar, aceptas nuestra política de privacidad.",
+            "success": {
+                "title": "¡Todo listo!",
+                "description": "Redirigiéndote al contenido..."
+            },
+            "alreadyRegistered": {
+                "title": "Ya registrado",
+                "description": "Ya te has registrado para este compartido."
+            },
+            "errors": {
+                "nameMinLength": "El nombre debe tener al menos 2 caracteres",
+                "invalidEmail": "Por favor, introduce una dirección de correo válida",
+                "invalidPhone": "Por favor, introduce un número de teléfono válido",
+                "submitFailed": "Algo salió mal. Por favor, inténtalo de nuevo."
+            }
+        },
+        "public": {
+            "tagline": "Comparte Archivos y Texto de Forma Segura",
+            "pageTitle": "Registrarse",
+            "registerTitle": "Registra tu Información",
+            "registerSubtitle": "Por favor proporciona tu información de contacto para ser añadido a nuestra lista de distribución.",
+            "notFound": "Compartido no encontrado",
+            "notFoundDesc": "Este enlace de compartido es inválido o ha expirado.",
+            "defaultTitle": "Contenido Compartido",
+            "defaultDescription": "Por favor, introduce tus datos para acceder a este contenido.",
+            "footer": {
+                "privacy": "Política de Privacidad",
+                "terms": "Términos de Servicio",
+                "rights": "Todos los derechos reservados."
+            }
+        },
+        "actions": {
+            "delete": "Eliminar",
+            "edit": "Editar",
+            "retry": "Reintentar"
+        },
+        "footer": {
+            "privacy": "Política de Privacidad",
+            "terms": "Términos de Servicio",
+            "rights": "Todos los derechos reservados."
+        }
     }
 }

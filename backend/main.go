@@ -20,10 +20,18 @@ func main() {
 	zap.ReplaceGlobals(logger)
 
 	e := echo.New()
+
+	// Register public routes first (no auth middleware)
+	for _, route := range publicRoutes {
+		e.Match(route.Method, route.Path, route.Handler)
+	}
+
+	// Apply middleware for authenticated routes
 	for _, middleware := range middlewares {
 		e.Use(middleware())
 	}
 
+	// Register authenticated routes
 	for _, route := range routes {
 		e.Match(route.Method, route.Path, route.Handler)
 	}

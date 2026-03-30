@@ -30,4 +30,13 @@ var (
 
 	// 用户相关
 	ErrUnauthorized = errors.New("Unauthorized") // 未授权访问
+
+	// 收件人相关
+	ErrRecipientNotFound      = errors.New("RecipientNotFound")      // 收件人不存在
+	ErrRecipientAlreadyExists = errors.New("RecipientAlreadyExists") // 收件人已存在
+
+	// 分组相关
+	ErrGroupNotFound         = errors.New("GroupNotFound")         // 分组不存在
+	ErrGroupAlreadyExists    = errors.New("GroupAlreadyExists")    // 分组已存在
+	ErrCannotDeleteAutoGroup = errors.New("CannotDeleteAutoGroup") // 无法删除自动创建的分组
 )

@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { LucideUploadCloud, LucideFileText, LucideLink, LucideBarChart3, LucideSettings, LucideActivity, LucideX } from 'lucide-vue-next'
+import { LucideUploadCloud, LucideFileText, LucideLink, LucideUsers, LucideBarChart3, LucideSettings, LucideActivity, LucideX } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
+
+defineOptions({
+    inheritAttrs: false,
+})
 
 const route = useRoute()
 const router = useRouter()
@@ -18,6 +22,7 @@ const navItems: NavItem[] = [
     { id: 'upload', labelKey: 'sidebar.upload', icon: LucideUploadCloud, path: '/upload', ariaLabel: 'Navigate to Upload' },
     { id: 'text', labelKey: 'sidebar.text', icon: LucideFileText, path: '/text', ariaLabel: 'Navigate to Shared Text' },
     { id: 'links', labelKey: 'sidebar.links', icon: LucideLink, path: '/links', ariaLabel: 'Navigate to My Links' },
+    { id: 'recipients', labelKey: 'sidebar.recipients', icon: LucideUsers, path: '/recipients', ariaLabel: 'Navigate to Recipients' },
     { id: 'analytics', labelKey: 'sidebar.analytics', icon: LucideBarChart3, path: '/analytics', ariaLabel: 'Navigate to Analytics' },
     { id: 'settings', labelKey: 'sidebar.settings', icon: LucideSettings, path: '/settings', ariaLabel: 'Navigate to Settings' },
 ]
@@ -79,7 +84,9 @@ defineExpose({ toggleMobile })
 
     <!-- Sidebar -->
     <aside
+        v-bind="$attrs"
         ref="sidebarRef"
+        id="main-sidebar"
         :class="
             cn(
                 'h-screen w-64 bg-surface-container-low flex flex-col p-4 font-headline text-sm tracking-wide z-50 border-r border-white/5',

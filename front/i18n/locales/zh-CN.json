@@ -7,6 +7,7 @@
         "upload": "上传",
         "text": "共享文本",
         "links": "我的链接",
+        "recipients": "收件人",
         "analytics": "数据分析",
         "settings": "设置",
         "storage": "存储空间",
@@ -456,5 +457,176 @@
         "days": "天",
         "hours": "小时",
         "minutes": "分钟"
+    },
+    "recipients": {
+        "title": "收件人",
+        "subtitle": "管理共享内容的收件人",
+        "tabs": {
+            "recipients": "收件人",
+            "groups": "群组",
+            "send": "发送"
+        },
+        "recipients": {
+            "stats": {
+                "total": "收件人总数",
+                "thisWeek": "本周",
+                "byShare": "独立分享"
+            },
+            "table": {
+                "name": "姓名",
+                "contact": "联系方式",
+                "share": "分享",
+                "joined": "注册时间",
+                "actions": "操作",
+                "empty": {
+                    "title": "暂无收件人",
+                    "description": "当人们注册访问您的共享内容时，收件人将显示在这里。"
+                }
+            },
+            "filter": {
+                "label": "按分享筛选",
+                "all": "所有分享"
+            },
+            "error": {
+                "title": "加载收件人失败"
+            },
+            "deleted": "收件人已删除",
+            "empty": {
+                "title": "暂无收件人",
+                "description": "当人们注册访问您的共享内容时，收件人将显示在这里。"
+            },
+            "actions": {
+                "delete": "删除收件人"
+            }
+        },
+        "groups": {
+            "description": "将收件人组织成群组以便分发",
+            "title": "群组",
+            "create": "创建群组",
+            "edit": "编辑群组",
+            "delete": "删除群组",
+            "deleteConfirm": "您确定要删除此群组吗？",
+            "name": "群组名称",
+            "namePlaceholder": "工程团队",
+            "memberCount": "{count} 名成员",
+            "selectRecipients": "选择收件人",
+            "selected": "已选择 {count} 名收件人",
+            "created": "群组已创建",
+            "updated": "群组已更新",
+            "deleted": "群组已删除",
+            "empty": {
+                "title": "暂无群组",
+                "description": "创建群组以组织您的收件人，便于分发。"
+            },
+            "actions": {
+                "edit": "编辑群组",
+                "delete": "删除群组"
+            },
+            "modal": {
+                "createTitle": "创建群组",
+                "editTitle": "编辑群组",
+                "nameLabel": "群组名称",
+                "namePlaceholder": "工程团队",
+                "membersLabel": "选择收件人",
+                "selectedCount": "已选择 {count} 名收件人",
+                "noRecipients": "没有可用的收件人"
+            }
+        },
+        "send": {
+            "title": "发送内容",
+            "yourShareLinks": "您的分享链接",
+            "shareLinksDesc": "复制这些链接并分享给您的收件人：",
+            "noShares": "还没有分享。创建一个吧。",
+            "createShare": "创建分享",
+            "copy": "复制",
+            "copied": "链接已复制到剪贴板！",
+            "shareNote": "访问此链接的收件人可以输入姓名和邮箱/电话进行注册。",
+            "orSend": "或发送给现有群组",
+            "howItWorks": "工作原理",
+            "howItWorksDesc": "通过此链接注册的收件人：",
+            "step1": "输入姓名 + 邮箱/电话",
+            "step2": "自动添加到全部收件人群组",
+            "step3": "您可以随后通过邮件发送内容",
+            "selectGroup": "选择群组",
+            "selectGroupPlaceholder": "选择一个群组...",
+            "selectShares": "选择分享",
+            "preview": "预览",
+            "previewTo": "发送给",
+            "emails": "邮件",
+            "emailsTotal": "封邮件总计",
+            "content": "内容",
+            "recipients": "收件人",
+            "sendEmail": "通过邮件发送",
+            "sendSms": "通过短信发送",
+            "smsSuccess": "短信已发送给 {count} 名收件人",
+            "sending": "发送中...",
+            "success": "成功发送给 {count} 名收件人",
+            "failed": "发送给 {count} 名收件人失败",
+            "noGroup": "选择一个群组来发送内容",
+            "noShares": "至少选择一个分享来发送",
+            "selectAll": "全选",
+            "result": {
+                "title": "发送结果",
+                "sent": "成功发送 {count} 封邮件"
+            },
+            "preview": {
+                "to": "发送给",
+                "emails": "邮件",
+                "emailsTotal": "封邮件总计",
+                "content": "内容"
+            }
+        },
+        "form": {
+            "title": "访问内容",
+            "name": "您的姓名",
+            "namePlaceholder": "输入您的姓名",
+            "contactType": "联系方式",
+            "email": "邮箱",
+            "phone": "电话",
+            "emailPlaceholder": "name{'@'}example.com",
+            "phonePlaceholder": "+1 (555) 000-0000",
+            "submit": "访问内容",
+            "submitting": "提交中...",
+            "privacyNote": "提交即表示您同意我们的隐私政策。",
+            "success": {
+                "title": "搞定了！",
+                "description": "正在将您重定向到内容..."
+            },
+            "alreadyRegistered": {
+                "title": "已注册",
+                "description": "您已经注册过此分享。"
+            },
+            "errors": {
+                "nameMinLength": "姓名至少需要2个字符",
+                "invalidEmail": "请输入有效的邮箱地址",
+                "invalidPhone": "请输入有效的电话号码",
+                "submitFailed": "出了点问题，请重试。"
+            }
+        },
+        "public": {
+            "tagline": "安全分享文件和文本",
+            "pageTitle": "注册",
+            "registerTitle": "填写您的信息",
+            "registerSubtitle": "请提供您的联系信息以便添加到我们的分发列表。",
+            "notFound": "分享未找到",
+            "notFoundDesc": "此分享链接无效或已过期。",
+            "defaultTitle": "共享内容",
+            "defaultDescription": "请输入您的详细信息以访问此内容。",
+            "footer": {
+                "privacy": "隐私政策",
+                "terms": "服务条款",
+                "rights": "版权所有。"
+            }
+        },
+        "actions": {
+            "delete": "删除",
+            "edit": "编辑",
+            "retry": "重试"
+        },
+        "footer": {
+            "privacy": "隐私政策",
+            "terms": "服务条款",
+            "rights": "版权所有。"
+        }
     }
 }
